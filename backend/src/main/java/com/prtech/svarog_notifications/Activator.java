@@ -85,26 +85,16 @@ public class Activator implements BundleActivator {
 	private ServiceTracker httpTracker;
 
 	/**
-	 * Init method adding all classes to the list
-	 * 
-	 * @return list with class objects
+	 * List of JAXRS Service classes which we will later use for registration in the
+	 * bundle startup
 	 */
-	private ArrayList<Class<?>> initClasses() {
-		ArrayList<Class<?>> list = new ArrayList<Class<?>>();
-		return list;
-
-	}
+	private ArrayList<Class<?>> jaxServiceClasses = initClasses();
 
 	/**
-	 * List of executor objects to be used for initialisation
-	 * 
-	 * @return Map with executors
+	 * List of classes implementing ISvExecutor which we will later use for
+	 * registration in the bundle startup
 	 */
-	private ArrayList<ISvExecutor> initExecutors() {
-		ArrayList<ISvExecutor> list = new ArrayList<ISvExecutor>();
-		return list;
-
-	}
+	private ArrayList<ISvExecutor> executorServiceClasses = initExecutors();
 
 	/**
 	 * Implements BundleActivator.start(). Registers all instances of the JAXRS
