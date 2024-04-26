@@ -14,7 +14,9 @@
     "url": "https://gitlab.prtech.mk/svarog4/svarog-notifications.git"
   },
   "dependencies": {
-    "perun-core": "git+https://git@gitlab.prtech.mk/svarog4/perun-core#dev"
+    "date-fns": "^3.6.0",
+    "perun-core": "git+https://git@gitlab.prtech.mk/svarog4/perun-core#dev",
+    "react-paginate": "^8.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.24.4",

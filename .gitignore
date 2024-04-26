@@ -1,5 +1,6 @@
 # npm dependencies
 /node_modules
+backend/www/*.jpg
 backend/www/*.js
 backend/www/svarog-notifications.js.LICENSE.txt
 backend/www/svarog-notifications.js.map

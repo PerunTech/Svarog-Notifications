@@ -5,9 +5,15 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  date-fns:
+    specifier: ^3.6.0
+    version: 3.6.0
   perun-core:
     specifier: git+https://git@gitlab.prtech.mk/svarog4/perun-core#dev
     version: gitlab.prtech.mk/svarog4/perun-core/5ea2cb1fdfd2edc977a622dae73203757e73a359
+  react-paginate:
+    specifier: ^8.2.0
+    version: 8.2.0(react@16.14.0)
 
 devDependencies:
   '@babel/core':
@@ -2589,6 +2595,10 @@ packages:
       is-data-view: 1.0.1
     dev: true
 
+  /date-fns@3.6.0:
+    resolution: {integrity: sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww==}
+    dev: false
+
   /debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
     peerDependencies:
@@ -5028,6 +5038,15 @@ packages:
       react-dom: 16.14.0(react@16.14.0)
       uncontrollable: 7.2.1(react@16.14.0)
       warning: 4.0.3
+    dev: false
+
+  /react-paginate@8.2.0(react@16.14.0):
+    resolution: {integrity: sha512-sJCz1PW+9PNIjUSn919nlcRVuleN2YPoFBOvL+6TPgrH/3lwphqiSOgdrLafLdyLDxsgK+oSgviqacF4hxsDIw==}
+    peerDependencies:
+      react: ^16 || ^17 || ^18
+    dependencies:
+      prop-types: 15.8.1
+      react: 16.14.0
     dev: false
 
   /react-redux@5.1.2(react@16.14.0)(redux@4.2.1):

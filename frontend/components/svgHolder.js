@@ -1,4 +1,4 @@
-import React from 'react'
+import { React } from 'perun-core'
 
 export const svgIcons = {
   search: <svg style={{ marginRight: '5px', marginTop: '-1px' }} version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" width="23px" height="23px" viewBox="0 0 52.966 52.966" enable-background="new 0 0 52.966 52.966">
@@ -74,7 +74,7 @@ export const svgIcons = {
   back: <svg style={{ marginRight: '5px' }} version="1.1" id="Capa_1" width="21px" height="21px" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 477.175 477.175" enable-background="new 0 0 477.175 477.175">
     <g><path fill="currentColor" d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225 c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z" /></g>
   </svg>,
-  messageIcon: <svg style={{ marginLeft: '0.5%', marginTop: '-0.4%' }} version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="21px" height="21px"  viewBox="0 0 512 512" enable-background="new 0 0 512 512">
+  messageIcon: <svg style={{ marginLeft: '0.5%', marginTop: '-0.4%' }} version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="21px" height="21px" viewBox="0 0 512 512" enable-background="new 0 0 512 512">
     <g>
       <g>
         <g>
