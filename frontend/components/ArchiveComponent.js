@@ -29,14 +29,14 @@ class ArchiveComponent extends React.Component {
     const { gridId } = this.state
     let gridElementArr = []
     let htmlElement = <div className={style['context-menu-holder']}>
-        <p className={style['archive-paragraph']}>Archived</p>
-      </div>
+      <p className={style['archive-paragraph']}>Archived</p>
+    </div>
     let grid = <GenericGrid
       gridType={'READ_URL'}
       key={gridId}
       id={gridId}
-      configTableName={'/message_module/MsgServices/getTableFieldList/%session/' + tableName}
-      dataTableName={'/message_module/MsgServices/getArchivedSubjects/%session'}
+      configTableName={'/svarog_notifications/services/getTableFieldList/%session/' + tableName}
+      dataTableName={'/svarog_notifications/services/getArchivedSubjects/%session'}
       minHeight={740}
       onRowClickFunct={this.onArchiveRowClick}
       customClassName={'customGridClass'}
@@ -52,19 +52,19 @@ class ArchiveComponent extends React.Component {
     // const objectType = `type=${row[`${tableName}.OBJECT_TYPE`]}`
     const objId = row[`${tableName}.OBJECT_ID`]
     const objectType = row[`${tableName}.OBJECT_TYPE`]
-    this.setState({objIdState: objId, objectTypeState: objectType, showGrid: false})
+    this.setState({ objIdState: objId, objectTypeState: objectType, showGrid: false })
     // hashHistory.push(`/main/message?${objId}&${objectType}`)
   }
 
-    handleBack = () => {
-    this.setState({objIdState: '', objectTypeState: '', showGrid: true})
+  handleBack = () => {
+    this.setState({ objIdState: '', objectTypeState: '', showGrid: true })
   }
 
   render() {
     const { generateGridElement, objIdState, objectTypeState, showGrid } = this.state
     return (
       <React.Fragment>
-        {objIdState && objectTypeState && <ArchiveMessages handleBack={this.handleBack} objId={objIdState} objType={objectTypeState}/>}
+        {objIdState && objectTypeState && <ArchiveMessages handleBack={this.handleBack} objId={objIdState} objType={objectTypeState} />}
         {showGrid && generateGridElement}
       </React.Fragment>
     )

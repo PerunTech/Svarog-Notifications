@@ -26,7 +26,7 @@ class MessagesWrapper extends React.Component {
 
   componentDidMount() {
     this.getContextMenu(this.state.contextMenuItems);
-    this.setState({inboxComponent: <InboxComponent location={this.props.location} />})
+    this.setState({ inboxComponent: <InboxComponent location={this.props.location} /> })
   }
 
   getContextMenu = (contextMenuItems) => {
@@ -56,21 +56,21 @@ class MessagesWrapper extends React.Component {
       params={'READ_URL'}
       key={tableName + '_FORM'}
       id={tableName + '_FORM'}
-      method={`/message_module/MsgServices/getTableJSONSchema/${svSession}/${tableName}`}
-      uiSchemaConfigMethod={`/message_module/MsgServices/getTableUISchema/${svSession}/${tableName}`}
+      method={`/svarog_notifications/services/getTableJSONSchema/${svSession}/${tableName}`}
+      uiSchemaConfigMethod={`/svarog_notifications/services/getTableUISchema/${svSession}/${tableName}`}
       hideBtns='closeAndDelete'
       addSaveFunction={(e) => this.saveForm(e)}
       customSave={true}
       customSaveButtonName={customSaveButtonName}
       className={'message-form'}
     />
-    this.setState({ form: form, inboxComponent: undefined, sentComponent: undefined, archiveComponent: undefined})
+    this.setState({ form: form, inboxComponent: undefined, sentComponent: undefined, archiveComponent: undefined })
   }
 
 
-  saveForm = (e) => { 
+  saveForm = (e) => {
     let { svSession } = this.props
-    let postUrl = window.server + '/message_module/MsgServices/createNewMessage/' + svSession
+    let postUrl = window.server + '/svarog_notifications/services/createNewMessage/' + svSession
     let form_params = e.formData
     // console.log(form_params)
     // console.log(flattenObject(form_params))
@@ -85,7 +85,7 @@ class MessagesWrapper extends React.Component {
       if (response && response.data) {
         if (response.data) {
           alertUser(true, response.data.type.toLowerCase(), response.data.title, response.data.message, null)
-          this.setState({form : ''}, () => {
+          this.setState({ form: '' }, () => {
             this.generateForm()
           })
         }
@@ -102,12 +102,12 @@ class MessagesWrapper extends React.Component {
     if (actionType) {
       switch (actionType) {
         case 'search': {
-          this.setState({ searchComponent: <SearchComponent />, sentComponent: undefined, form: undefined, archiveComponent: undefined, inboxComponent: undefined})
+          this.setState({ searchComponent: <SearchComponent />, sentComponent: undefined, form: undefined, archiveComponent: undefined, inboxComponent: undefined })
           break;
         }
         case 'create_message': {
           this.generateForm()
-          this.setState({searchComponent: undefined, inboxComponent: undefined, archiveComponent: undefined, sentComponent: undefined })
+          this.setState({ searchComponent: undefined, inboxComponent: undefined, archiveComponent: undefined, sentComponent: undefined })
           break;
         }
         case 'msg_inbox': {
@@ -127,7 +127,7 @@ class MessagesWrapper extends React.Component {
   }
 
   render() {
-    const { generateElement, form, inboxComponent, sentComponent, archiveComponent,searchComponent } = this.state
+    const { generateElement, form, inboxComponent, sentComponent, archiveComponent, searchComponent } = this.state
     return (
       <div id='container' className={style['container']}>
         <div id='left-container' className={style['left-container']}>

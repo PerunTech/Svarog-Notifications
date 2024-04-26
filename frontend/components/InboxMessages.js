@@ -23,7 +23,7 @@ class InboxMessages extends React.Component {
 
   getMessageSubject = () => {
     const { svSession, objId } = this.props
-    const url = window.server + `/message_module/MsgServices/getObjectsByParentId/${svSession}/${objId}/${tableName}/PKID/DESC`
+    const url = window.server + `/svarog_notifications/services/getObjectsByParentId/${svSession}/${objId}/${tableName}/PKID/DESC`
     axios.get(url)
       .then((response) => {
         if (response.data) {
@@ -39,7 +39,7 @@ class InboxMessages extends React.Component {
 
   getInboxSubjectRecipientInfo = () => {
     const { svSession } = this.props
-    const url = window.server + `/message_module/MsgServices/getInboxSubjectRecipientInfo/${svSession}`
+    const url = window.server + `/svarog_notifications/services/getInboxSubjectRecipientInfo/${svSession}`
     axios.get(url)
       .then((response) => {
         if (response.data) {
@@ -124,7 +124,7 @@ class InboxMessages extends React.Component {
         const date = subjectData[i]["MESSAGE.DT_INSERT"]
         htmlSubjectElement = <div className={'message-holder'}>
           <div className='msg-title-holder'>
-            <p type='text' className={'msg-title'}>{iconManager.getIcon('messageIcon')}<strong style={{marginLeft: '0.5%'}}>{this.state.title}</strong></p>
+            <p type='text' className={'msg-title'}>{iconManager.getIcon('messageIcon')}<strong style={{ marginLeft: '0.5%' }}>{this.state.title}</strong></p>
           </div>
           <div className={'message-data'}>
             <p type='text' className={'create-holder'}><b>{iconManager.getIcon('user')}{createByName}</b></p>
@@ -181,7 +181,7 @@ class InboxMessages extends React.Component {
     }
     const data = jsonToURI(replyData)
     let { svSession } = this.props
-    let postUrl = window.server + '/message_module/MsgServices/createNewMessage/' + svSession
+    let postUrl = window.server + '/svarog_notifications/services/createNewMessage/' + svSession
     axios({
       method: 'post',
       data: data,

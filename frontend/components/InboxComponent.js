@@ -32,7 +32,7 @@ class InboxComponent extends React.Component {
   getTotalNumberPages = async () => {
     const { svSession } = this.props
     const { perPage } = this.state
-    const url = window.server + `/message_module/MsgServices/countTotalNumberOfObjectsPerCategory/${svSession}/INBOX`
+    const url = window.server + `/svarog_notifications/services/countTotalNumberOfObjectsPerCategory/${svSession}/INBOX`
     try {
       const response = await axios.get(url)
       if (response.data) {
@@ -59,8 +59,8 @@ class InboxComponent extends React.Component {
       gridType={'READ_URL'}
       key={gridId}
       id={gridId}
-      configTableName={'/message_module/MsgServices/getTableFieldList/%session/' + tableName}
-      dataTableName={`/message_module/MsgServices/getInboxSubjectsWithPagination/%session/${start}/${end}`}
+      configTableName={'/svarog_notifications/services/getTableFieldList/%session/' + tableName}
+      dataTableName={`/svarog_notifications/services/getInboxSubjectsWithPagination/%session/${start}/${end}`}
       minHeight={500}
       onRowClickFunct={this.onInboxRowClick}
       customClassName={'customGridClass'}
@@ -81,10 +81,11 @@ class InboxComponent extends React.Component {
   }
 
   handleBack = () => {
-    this.setState({ objIdState: '', objectTypeState: '', showGrid: true, hideTmp: true  })
+    this.setState({ objIdState: '', objectTypeState: '', showGrid: true, hideTmp: true })
   }
 
-  handlePageClick = (e) => { debugger
+  handlePageClick = (e) => {
+    debugger
     const { perPage, totalNumber } = this.state
     const page = e.selected;
     const start = (page * perPage) % totalNumber;

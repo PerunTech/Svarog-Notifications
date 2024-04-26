@@ -24,7 +24,7 @@ class SentMessages extends React.Component {
 
   getMessageSubject = () => {
     const { svSession, objId } = this.props
-    const url = window.server + `/message_module/MsgServices/getObjectsByParentId/${svSession}/${objId}/${tableName}/PKID/DESC`
+    const url = window.server + `/svarog_notifications/services/getObjectsByParentId/${svSession}/${objId}/${tableName}/PKID/DESC`
     axios.get(url)
       .then((response) => {
         if (response.data) {
@@ -39,7 +39,7 @@ class SentMessages extends React.Component {
 
   getSentSubjectRecipientInfo = () => {
     const { svSession } = this.props
-    const url = window.server + `/message_module/MsgServices/getSentOrArchivedSubjectRecipientInfo/${svSession}/VALID`
+    const url = window.server + `/svarog_notifications/services/getSentOrArchivedSubjectRecipientInfo/${svSession}/VALID`
     axios.get(url)
       .then((response) => {
         if (response.data) {
@@ -125,9 +125,9 @@ class SentMessages extends React.Component {
         const priority = subjectData[i]["MESSAGE.PRIORITY"]
         htmlSubjectElement = <div className={'message-holder'}>
           <div className={'message-data'}>
-          <div className='msg-title-holder'>
-            <p type='text' className={'msg-title'}>{iconManager.getIcon('messageIcon')}<strong style={{marginLeft: '0.5%'}}>{this.state.title}</strong></p>
-          </div>
+            <div className='msg-title-holder'>
+              <p type='text' className={'msg-title'}>{iconManager.getIcon('messageIcon')}<strong style={{ marginLeft: '0.5%' }}>{this.state.title}</strong></p>
+            </div>
             <p type='text' className={'create-holder'}><b>{iconManager.getIcon('user')}{createByName}</b></p>
             <p type='text' className={'date-holder'}>
               {format(new Date(date), 'eee MMM dd kk:mm', { locale: en })}
@@ -182,7 +182,7 @@ class SentMessages extends React.Component {
     }
     const data = jsonToURI(replyData)
     let { svSession } = this.props
-    let postUrl = window.server + '/message_module/MsgServices/createNewMessage/' + svSession
+    let postUrl = window.server + '/svarog_notifications/services/createNewMessage/' + svSession
     axios({
       method: 'post',
       data: data,
