@@ -49,7 +49,7 @@ public class Writer {
 					|| title.trim().equals(SN.EMPTY_STRING) || category == null
 					|| category.trim().equals(SN.EMPTY_STRING) || priority == null
 					|| priority.trim().equals(SN.EMPTY_STRING)) {
-				throw new SvException(SN.svarog_notifications_ERROR_MANDATORY_FIELDS_ARE_MISSING, svw.getInstanceUser());
+				throw new SvException(SN.SVAROG_NOTIFICATIONS_ERROR_MANDATORY_FIELDS_ARE_MISSING, svw.getInstanceUser());
 			}
 			dboSubject = new DbDataObject();
 			dboSubject.setObjectType(SvReader.getTypeIdByName(SN.SUBJECT));
@@ -81,7 +81,7 @@ public class Writer {
 		DbDataObject dboMessage = null;
 		try {
 			if (text == null || text.trim().equals(SN.EMPTY_STRING) || dboSubject == null) {
-				throw new SvException(SN.svarog_notifications_ERROR_MANDATORY_FIELDS_ARE_MISSING, svw.getInstanceUser());
+				throw new SvException(SN.SVAROG_NOTIFICATIONS_ERROR_MANDATORY_FIELDS_ARE_MISSING, svw.getInstanceUser());
 			}
 			dboMessage = new DbDataObject();
 			dboMessage.setObjectType(SvReader.getTypeIdByName(SN.MESSAGE));
@@ -203,7 +203,7 @@ public class Writer {
 			dboMsgAttachment = new DbDataObject();
 			dboMsgAttachment.setObjectType(SvReader.getTypeIdByName(SN.MSG_ATTACHEMENT));
 			if (dboMessage == null || atchName == null || atchName.trim().equals(SN.EMPTY_STRING)) {
-				throw new SvException(SN.svarog_notifications_ERROR_MANDATORY_FIELDS_ARE_MISSING, svr.getInstanceUser());
+				throw new SvException(SN.SVAROG_NOTIFICATIONS_ERROR_MANDATORY_FIELDS_ARE_MISSING, svr.getInstanceUser());
 			}
 			dboMsgAttachment.setVal(SN.MSG_ID, dboMessage.getObjectId());
 			dboMsgAttachment.setVal(SN.ATCH_OBJ_TYPE, atchObjType);
@@ -423,7 +423,7 @@ public class Writer {
 		DbDataObject dboMessage = null;
 		try {
 			if (text == null || text.trim().equals(SN.EMPTY_STRING) || dboSubject == null) {
-				throw new SvException(SN.svarog_notifications_ERROR_MANDATORY_FIELDS_ARE_MISSING, svw.getInstanceUser());
+				throw new SvException(SN.SVAROG_NOTIFICATIONS_ERROR_MANDATORY_FIELDS_ARE_MISSING, svw.getInstanceUser());
 			}
 			dboMessage = new DbDataObject();
 			dboMessage.setObjectType(SvReader.getTypeIdByName(SN.MESSAGE));

@@ -800,7 +800,7 @@ public class Reader {
 				total = rs.getInt(SN.TOTAL);
 			}
 		} catch (Exception e) {
-			throw (new SvException(SN.svarog_notifications_ERROR_GETTING_SELECTED_RESULT, svr.getInstanceUser(), e));
+			throw (new SvException(SN.SVAROG_NOTIFICATIONS_ERROR_GETTING_SELECTED_RESULT, svr.getInstanceUser(), e));
 		} finally {
 			try {
 				if (rs != null)
@@ -808,7 +808,7 @@ public class Reader {
 				if (conn != null)
 					conn.close();
 			} catch (SQLException e) {
-				log4j.error(new SvException(SN.svarog_notifications_ERROR_GETTING_SELECTED_RESULT, svr.getInstanceUser(), e));
+				log4j.error(new SvException(SN.SVAROG_NOTIFICATIONS_ERROR_GETTING_SELECTED_RESULT, svr.getInstanceUser(), e));
 			}
 		}
 		return total;
@@ -846,7 +846,7 @@ public class Reader {
 				total = rs.getInt(SN.TOTAL);
 			}
 		} catch (Exception e) {
-			throw (new SvException(SN.svarog_notifications_ERROR_GETTING_SELECTED_RESULT, svr.getInstanceUser(), e));
+			throw (new SvException(SN.SVAROG_NOTIFICATIONS_ERROR_GETTING_SELECTED_RESULT, svr.getInstanceUser(), e));
 		} finally {
 			try {
 				if (rs != null)
@@ -854,7 +854,7 @@ public class Reader {
 				if (conn != null)
 					conn.close();
 			} catch (SQLException e) {
-				log4j.error(new SvException(SN.svarog_notifications_ERROR_GETTING_SELECTED_RESULT, svr.getInstanceUser(), e));
+				log4j.error(new SvException(SN.SVAROG_NOTIFICATIONS_ERROR_GETTING_SELECTED_RESULT, svr.getInstanceUser(), e));
 			}
 		}
 		return total;
@@ -896,7 +896,7 @@ public class Reader {
 				total = rs.getInt(SN.TOTAL);
 			}
 		} catch (Exception e) {
-			throw (new SvException(SN.svarog_notifications_ERROR_GETTING_SELECTED_RESULT, svr.getInstanceUser(), e));
+			throw (new SvException(SN.SVAROG_NOTIFICATIONS_ERROR_GETTING_SELECTED_RESULT, svr.getInstanceUser(), e));
 		} finally {
 			try {
 				if (rs != null)
@@ -904,7 +904,7 @@ public class Reader {
 				if (conn != null)
 					conn.close();
 			} catch (SQLException e) {
-				log4j.error(new SvException(SN.svarog_notifications_ERROR_GETTING_SELECTED_RESULT, svr.getInstanceUser(), e));
+				log4j.error(new SvException(SN.SVAROG_NOTIFICATIONS_ERROR_GETTING_SELECTED_RESULT, svr.getInstanceUser(), e));
 			}
 		}
 		return total;

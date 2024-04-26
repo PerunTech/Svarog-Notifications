@@ -784,13 +784,13 @@ public class SvarogNotificationsServices {
 				if (dboAttch != null) {
 					svw.dbCommit();
 				}
-				jrh.create(MessageType.SUCCESS, I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_CREATED_MESSAGE),
-						I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_CREATED_MESSAGE), new JsonObject());
+				jrh.create(MessageType.SUCCESS, I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_CREATED_MESSAGE),
+						I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_CREATED_MESSAGE), new JsonObject());
 			} else {
-				throw new SvException(SN.svarog_notifications_ERROR_MANDATORY_FIELDS_ARE_MISSING, svw.getInstanceUser());
+				throw new SvException(SN.SVAROG_NOTIFICATIONS_ERROR_MANDATORY_FIELDS_ARE_MISSING, svw.getInstanceUser());
 			}
 		} catch (Exception e) {
-			return handleException(e, jrh, SN.svarog_notifications_ERROR_FAILED_TO_CREATE_NEW_MESSAGE);
+			return handleException(e, jrh, SN.SVAROG_NOTIFICATIONS_ERROR_FAILED_TO_CREATE_NEW_MESSAGE);
 		}
 		return Response.status(200).entity(jrh.getAll().toString()).build();
 	}
@@ -835,10 +835,10 @@ public class SvarogNotificationsServices {
 				dbArrFinal = rdr.removeDuplicatesFromDbDataArray(dbArrSubjects);
 				jArr = rdr.sortAndPrepareCustomJsonArray(dbArrFinal, jObj, SN.SUBJECT, wr);
 			}
-			jrh.create(MessageType.SUCCESS, I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_SUBJECTS),
-					I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_SUBJECTS));
+			jrh.create(MessageType.SUCCESS, I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_SUBJECTS),
+					I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_SUBJECTS));
 		} catch (Exception e) {
-			return handleException(e, jrh, SN.svarog_notifications_ERROR_NO_SUBJECTS_HAVE_BEEN_FOUND);
+			return handleException(e, jrh, SN.SVAROG_NOTIFICATIONS_ERROR_NO_SUBJECTS_HAVE_BEEN_FOUND);
 		}
 		return Response.status(200).entity(jArr.toString()).build();
 	}
@@ -873,10 +873,10 @@ public class SvarogNotificationsServices {
 				dbArrFinal = rdr.removeDuplicatesFromDbDataArray(dbArrSubjects);
 				jArr = rdr.sortAndPrepareCustomJsonArray(dbArrFinal, jObj, SN.SUBJECT, wr);
 			}
-			jrh.create(MessageType.SUCCESS, I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_SUBJECTS),
-					I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_SUBJECTS));
+			jrh.create(MessageType.SUCCESS, I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_SUBJECTS),
+					I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_SUBJECTS));
 		} catch (Exception e) {
-			return handleException(e, jrh, SN.svarog_notifications_ERROR_FAILED_TO_GET_SENT_SUBJECTS);
+			return handleException(e, jrh, SN.SVAROG_NOTIFICATIONS_ERROR_FAILED_TO_GET_SENT_SUBJECTS);
 		}
 		return Response.status(200).entity(jArr.toString()).build();
 	}
@@ -911,10 +911,10 @@ public class SvarogNotificationsServices {
 				dbArrFinal = rdr.removeDuplicatesFromDbDataArray(dbArrSubjects);
 				jArr = rdr.sortAndPrepareCustomJsonArray(dbArrFinal, jObj, SN.SUBJECT, wr);
 			}
-			jrh.create(MessageType.SUCCESS, I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_ARCHIVED_SUBJECTS),
-					I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_ARCHIVED_SUBJECTS));
+			jrh.create(MessageType.SUCCESS, I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_ARCHIVED_SUBJECTS),
+					I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_ARCHIVED_SUBJECTS));
 		} catch (Exception e) {
-			return handleException(e, jrh, SN.svarog_notifications_ERROR_FAILED_TO_GET_ARCHIVED_SUBJECTS);
+			return handleException(e, jrh, SN.SVAROG_NOTIFICATIONS_ERROR_FAILED_TO_GET_ARCHIVED_SUBJECTS);
 		}
 		return Response.status(200).entity(jArr.toString()).build();
 	}
@@ -950,10 +950,10 @@ public class SvarogNotificationsServices {
 				dbArrFinal = rdr.removeDuplicatesFromDbDataArray(dbArrSubjects);
 				jArr = rdr.sortAndPrepareCustomJsonArray(dbArrFinal, jObj, SN.SUBJECT, wr);
 			}
-			jrh.create(MessageType.SUCCESS, I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSULLY_GET_INBOX_SUBJECTS),
-					I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSULLY_GET_INBOX_SUBJECTS));
+			jrh.create(MessageType.SUCCESS, I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSULLY_GET_INBOX_SUBJECTS),
+					I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSULLY_GET_INBOX_SUBJECTS));
 		} catch (Exception e) {
-			return handleException(e, jrh, SN.svarog_notifications_ERROR_FAILED_TO_GET_INBOX_SUBJECTS);
+			return handleException(e, jrh, SN.SVAROG_NOTIFICATIONS_ERROR_FAILED_TO_GET_INBOX_SUBJECTS);
 		}
 		return Response.status(200).entity(jArr.toString()).build();
 	}
@@ -990,14 +990,14 @@ public class SvarogNotificationsServices {
 					}
 				}
 				jrh.create(MessageType.SUCCESS,
-						I18n.getText(SN.svarog_notifications_SUCCESS_SUCESSFULLY_CHANGED_SUBJECT_STATUS),
-						I18n.getText(SN.svarog_notifications_SUCCESS_SUCESSFULLY_CHANGED_SUBJECT_STATUS), new JsonArray());
+						I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCESSFULLY_CHANGED_SUBJECT_STATUS),
+						I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCESSFULLY_CHANGED_SUBJECT_STATUS), new JsonArray());
 			} else {
-				jrh.create(MessageType.ERROR, I18n.getText(SN.svarog_notifications_ERROR_INVALID_STATUS_VALUES),
-						I18n.getText(SN.svarog_notifications_ERROR_INVALID_STATUS_VALUES));
+				jrh.create(MessageType.ERROR, I18n.getText(SN.SVAROG_NOTIFICATIONS_ERROR_INVALID_STATUS_VALUES),
+						I18n.getText(SN.SVAROG_NOTIFICATIONS_ERROR_INVALID_STATUS_VALUES));
 			}
 		} catch (Exception e) {
-			return handleException(e, jrh, SN.svarog_notifications_ERROR_FAILED_TO_CHANGE_SUBJECT_STATUS);
+			return handleException(e, jrh, SN.SVAROG_NOTIFICATIONS_ERROR_FAILED_TO_CHANGE_SUBJECT_STATUS);
 		}
 		return Response.status(200).entity(jrh.getAll().toString()).build();
 	}
@@ -1054,11 +1054,11 @@ public class SvarogNotificationsServices {
 			DbDataObject dboUser = SvReader.getUserBySession(sessionId);
 			if (dboUser != null && messageObjId != null
 					&& wr.updateStatusOfLinkBetweenMessageAndUser(dboUser, messageObjId, svw, svr)) {
-				result = SN.svarog_notifications_SUCCESS_SUCCESSFULLY_UPDATED_STATUS_OF_LINK;
+				result = SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_UPDATED_STATUS_OF_LINK;
 			}
 			jrh.create(MessageType.SUCCESS, I18n.getText(result), I18n.getText(result), new JsonArray());
 		} catch (Exception e) {
-			return handleException(e, jrh, SN.svarog_notifications_ERROR_FAILED_TO_CHANGE_STATUS_OF_LINK);
+			return handleException(e, jrh, SN.SVAROG_NOTIFICATIONS_ERROR_FAILED_TO_CHANGE_STATUS_OF_LINK);
 		} 
 		return Response.status(200).entity(jrh.getAll().toString()).build();
 	}
@@ -1130,10 +1130,10 @@ public class SvarogNotificationsServices {
 				jsonObject.addProperty(SN.NUMBER_OF_UNREAD_SUBJECTS_INBOX, counterValid);
 				jsonObject.addProperty(SN.NUMBER_OF_UNREAD_SUBJECTS_ARCHIVED, counterClosed);
 			}
-			jrh.create(MessageType.SUCCESS, I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_DATA),
-					I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_DATA), jsonObject);
+			jrh.create(MessageType.SUCCESS, I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_DATA),
+					I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_DATA), jsonObject);
 		} catch (Exception e) {
-			return handleException(e, jrh, SN.svarog_notifications_ERROR_FAILED_TO_GET_DATA);
+			return handleException(e, jrh, SN.SVAROG_NOTIFICATIONS_ERROR_FAILED_TO_GET_DATA);
 		}
 		return Response.status(200).entity(jrh.getAll().toString()).build();
 	}
@@ -1163,10 +1163,10 @@ public class SvarogNotificationsServices {
 				//jarr = rdr.convertDbDataArrayToGridJson(dbArrOrgUnits, SN.SVAROG_ORG_UNITS, false, SN.PKID, SN.DESC,
 				//		svr);
 			}
-			jrh.create(MessageType.SUCCESS, I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_DATA),
-					I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_DATA));
+			jrh.create(MessageType.SUCCESS, I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_DATA),
+					I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_DATA));
 		} catch (Exception e) {
-			return handleException(e, jrh, SN.svarog_notifications_ERROR_FAILED_TO_GET_DATA);
+			return handleException(e, jrh, SN.SVAROG_NOTIFICATIONS_ERROR_FAILED_TO_GET_DATA);
 		} 
 		return Response.status(200).entity(jrh.getAll().toString()).build();
 	}
@@ -1195,10 +1195,10 @@ public class SvarogNotificationsServices {
 				// get messages through link
 				rdr.getInboxMessagesThroughLink(dboUser, finalMessageList, svr);
 			}
-			jrh.create(MessageType.SUCCESS, I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_DATA),
-					I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_DATA), finalMessageList.toSimpleJson());
+			jrh.create(MessageType.SUCCESS, I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_DATA),
+					I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_DATA), finalMessageList.toSimpleJson());
 		} catch (Exception e) {
-			return handleException(e, jrh, SN.svarog_notifications_ERROR_FAILED_TO_GET_INBOX_MESSAGES);
+			return handleException(e, jrh, SN.SVAROG_NOTIFICATIONS_ERROR_FAILED_TO_GET_INBOX_MESSAGES);
 		}
 		return Response.status(200).entity(jrh.getAll().toString()).build();
 	}
@@ -1235,10 +1235,10 @@ public class SvarogNotificationsServices {
 				}
 				json.addProperty(SN.DATE_OF_CREATION, dboMessage.getDtInsert().toString());
 			}
-			jrh.create(MessageType.SUCCESS, I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_DATA),
-					I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_DATA), json);
+			jrh.create(MessageType.SUCCESS, I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_DATA),
+					I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_DATA), json);
 		} catch (Exception e) {
-			return handleException(e, jrh, SN.svarog_notifications_ERROR_FAILED_TO_GET_DATA);
+			return handleException(e, jrh, SN.SVAROG_NOTIFICATIONS_ERROR_FAILED_TO_GET_DATA);
 		}
 		return Response.status(200).entity(jrh.getAll().toString()).build();
 	}
@@ -1249,7 +1249,7 @@ public class SvarogNotificationsServices {
 	public Response changeMessageStatus(@PathParam("sessionId") String sessionId,
 			@PathParam("msgObjId") Long msgObjId) {
 		ResponseHandler jrh = new ResponseHandler();
-		String result = SN.svarog_notifications_ERROR_FAILED_TO_CHANGE_MESSAGE_STATUS;
+		String result = SN.SVAROG_NOTIFICATIONS_ERROR_FAILED_TO_CHANGE_MESSAGE_STATUS;
 		try (SvReader svr = new SvReader(sessionId); SvWriter svw = new SvWriter(svr)){
 			DbDataObject dboUser = SvReader.getUserBySession(sessionId);
 			DbDataObject dboMessage = svr.getObjectById(msgObjId, SvReader.getTypeIdByName(SN.MESSAGE), null);
@@ -1257,11 +1257,11 @@ public class SvarogNotificationsServices {
 				dboMessage.setStatus(SN.CLOSED);
 				svw.saveObject(dboMessage);
 				svw.dbCommit();
-				result = SN.svarog_notifications_SUCCESS_SUCCESSFULLY_CHANGED_MESSAGE_STATUS;
+				result = SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_CHANGED_MESSAGE_STATUS;
 			}
 			jrh.create(MessageType.SUCCESS, I18n.getText(result), I18n.getText(result), new JsonArray());
 		} catch (Exception e) {
-			return handleException(e, jrh, SN.svarog_notifications_ERROR_FAILED_TO_CHANGE_MESSAGE_STATUS);
+			return handleException(e, jrh, SN.SVAROG_NOTIFICATIONS_ERROR_FAILED_TO_CHANGE_MESSAGE_STATUS);
 		}
 		return Response.status(200).entity(jrh.getAll().toString()).build();
 	}
@@ -1285,10 +1285,10 @@ public class SvarogNotificationsServices {
 				}
 				exp.addDbSearchItem(cr2);
 			}
-			jrh.create(MessageType.SUCCESS, I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_DATA),
-					I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_DATA), dbArrMessages.toSimpleJson());
+			jrh.create(MessageType.SUCCESS, I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_DATA),
+					I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_DATA), dbArrMessages.toSimpleJson());
 		} catch (Exception e) {
-			return handleException(e, jrh, SN.svarog_notifications_ERROR_FAILED_TO_GET_DATA);
+			return handleException(e, jrh, SN.SVAROG_NOTIFICATIONS_ERROR_FAILED_TO_GET_DATA);
 		}
 		return Response.status(200).entity(jrh.getAll().toString()).build();
 	}
@@ -1728,11 +1728,11 @@ public class SvarogNotificationsServices {
 				DbDataObject dboTypeDesc = SvReader.getDbtByName(tableName.toUpperCase());
 				DbDataArray arrResult = svr.getObjectsByParentId(parentId, dboTypeDesc.getObjectId(), null, 0, 0);
 				jArr = rdr.sortAndPrepareCustomJsonArray(arrResult, jObj, tableName, wr);
-				jrh.create(MessageType.SUCCESS, I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFLLY_GET_MESSAGES),
-						I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFLLY_GET_MESSAGES));
+				jrh.create(MessageType.SUCCESS, I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFLLY_GET_MESSAGES),
+						I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFLLY_GET_MESSAGES));
 			}
 		} catch (SvException e) {
-			return handleException(e, jrh, SN.svarog_notifications_SUCCESS_SUCCESSFLLY_GET_MESSAGES);
+			return handleException(e, jrh, SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFLLY_GET_MESSAGES);
 		}
 		return Response.status(200).entity(jArr.toString()).build();
 	}
@@ -1759,7 +1759,7 @@ public class SvarogNotificationsServices {
 				jsonArray = rdr.getInboxSubjectsWithMessageRecipientInfo(subjectsWithoutDuplicates, dboUser, svr);
 			}
 		} catch (SvException e) {
-			return handleException(e, jrh, SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_SUBJECT_RECIPIENT_INFO);
+			return handleException(e, jrh, SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_SUBJECT_RECIPIENT_INFO);
 		}
 		return Response.status(200).entity(jsonArray.toString()).build();
 	}
@@ -1786,7 +1786,7 @@ public class SvarogNotificationsServices {
 						svr);
 			}
 		} catch (SvException e) {
-			return handleException(e, jrh, SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_SUBJECT_RECIPIENT_INFO);
+			return handleException(e, jrh, SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_SUBJECT_RECIPIENT_INFO);
 		}
 		return Response.status(200).entity(jsonArray.toString()).build();
 	}
@@ -2105,10 +2105,10 @@ public class SvarogNotificationsServices {
 					jArr.add(jObj);
 				}
 			}
-			jrh.create(MessageType.SUCCESS, I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSULLY_GET_INBOX_SUBJECTS),
-					I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSULLY_GET_INBOX_SUBJECTS));
+			jrh.create(MessageType.SUCCESS, I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSULLY_GET_INBOX_SUBJECTS),
+					I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSULLY_GET_INBOX_SUBJECTS));
 		} catch (Exception e) {
-			return handleException(e, jrh, SN.svarog_notifications_ERROR_FAILED_TO_GET_INBOX_SUBJECTS);
+			return handleException(e, jrh, SN.SVAROG_NOTIFICATIONS_ERROR_FAILED_TO_GET_INBOX_SUBJECTS);
 		}
 		return Response.status(200).entity(jArr.toString()).build();
 	}
@@ -2159,10 +2159,10 @@ public class SvarogNotificationsServices {
 					jArr.add(jObj);
 				}
 			}
-			jrh.create(MessageType.SUCCESS, I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_SUBJECTS),
-					I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_SUBJECTS));
+			jrh.create(MessageType.SUCCESS, I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_SUBJECTS),
+					I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_SUBJECTS));
 		} catch (Exception e) {
-			return handleException(e, jrh, SN.svarog_notifications_ERROR_FAILED_TO_GET_SUBJECTS);
+			return handleException(e, jrh, SN.SVAROG_NOTIFICATIONS_ERROR_FAILED_TO_GET_SUBJECTS);
 		}
 		return Response.status(200).entity(jArr.toString()).build();
 	}
@@ -2202,10 +2202,10 @@ public class SvarogNotificationsServices {
 					break;
 				}
 			}
-			jrh.create(MessageType.SUCCESS, I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_DATA),
-					I18n.getText(SN.svarog_notifications_SUCCESS_SUCCESSFULLY_GET_DATA));
+			jrh.create(MessageType.SUCCESS, I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_DATA),
+					I18n.getText(SN.SVAROG_NOTIFICATIONS_SUCCESS_SUCCESSFULLY_GET_DATA));
 		} catch (Exception e) {
-			return handleException(e, jrh, SN.svarog_notifications_ERROR_FAILED_TO_GET_DATA);
+			return handleException(e, jrh, SN.SVAROG_NOTIFICATIONS_ERROR_FAILED_TO_GET_DATA);
 		}
 		return Response.status(200).entity(String.valueOf(result)).build();
 	}
