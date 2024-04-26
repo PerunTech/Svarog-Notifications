@@ -1,0 +1,68 @@
+stages:
+  - 1_linter
+  - 2_build_and_install
+  - 3_mvn_install
+  - 4_sonarqube
+
+before_script:
+  - pwd
+  - echo $CI_BUILD_REF_NAME
+  - git remote -v
+  - git reset --hard HEAD
+  - git stash
+  - git pull origin $CI_BUILD_REF_NAME
+
+after_script:
+  - git reset --hard HEAD
+  - git stash
+  - git pull origin $CI_BUILD_REF_NAME
+
+1_pnpm_install_test_build:
+  stage: 1_linter
+  script:
+    - pwd
+    - git reset --hard HEAD
+    - rm -rf node_modules
+    - pnpm install
+    - pnpm run build
+
+1_build_test_java:
+  stage: 2_build_and_install
+  script:
+    - cd backend
+    - mvn clean
+    - mvn test
+
+1_svarog-nofitications-dev-install:
+  stage: 3_mvn_install
+  script:
+    - pwd
+    - cd $CI_PROJECT_DIR/
+    - git reset --hard HEAD
+    - rm -rf node_modules
+    - pnpm install
+    - rm -rf backend/www/*.js
+    - pnpm run build
+    - cd backend
+    - ls -al www/
+    - pwd
+    - mvn clean compile deploy -DskipTests
+  only:
+    - dev
+
+2_svarog-nofitications-stable-install:
+  stage: 3_mvn_install
+  script:
+    - pwd
+    - cd $CI_PROJECT_DIR/
+    - git reset --hard HEAD
+    - rm -rf node_modules
+    - pnpm install
+    - rm -rf backend/www/*.js
+    - pnpm run build
+    - cd backend
+    - ls -al www/
+    - pwd
+    - mvn clean compile deploy -DskipTests
+  only:
+    - master
