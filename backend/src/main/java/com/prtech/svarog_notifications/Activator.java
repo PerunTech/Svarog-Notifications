@@ -65,7 +65,10 @@ public class Activator implements BundleActivator {
 	 * List of JAXRS Service classes which we will later use for registration in
 	 * the bundle startup
 	 */
-	private ArrayList<Class<?>> jaxServiceClasses = initClasses();
+	private ArrayList<Class<?>> jaxServiceClasses = initClasses() {
+		list.add(SvarogNotificationsServices.class);
+		return list;
+	};
 
 	/**
 	 * List of classes implementing ISvExecutor which we will later use for
