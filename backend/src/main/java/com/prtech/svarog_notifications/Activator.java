@@ -97,6 +97,16 @@ public class Activator implements BundleActivator {
 	private ArrayList<ISvExecutor> executorServiceClasses = initExecutors();
 
 	/**
+	 * List of executor objects to be used for initialisation
+	 * 
+	 * @return Map with executors
+	 */
+	private ArrayList<ISvExecutor> initExecutors() {
+		ArrayList<ISvExecutor> list = new ArrayList<ISvExecutor>();
+		return list;
+	}
+
+	/**
 	 * Implements BundleActivator.start(). Registers all instances of the JAXRS
 	 * services as well as all objects implementing ISvExecutor interfaces using
 	 * the bundle context;
