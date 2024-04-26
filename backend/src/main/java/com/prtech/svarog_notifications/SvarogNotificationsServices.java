@@ -1047,7 +1047,7 @@ public class SvarogNotificationsServices {
 	public Response updateStatusOfLinkBetweenMessageAndUser(@PathParam("sessionId") String sessionId,
 			@PathParam("messageObjId") Long messageObjId) {
 		ResponseHandler jrh = new ResponseHandler();
-		String result = SN.svarog_notifications_INFO_FAILED_TO_CHANGE_STATUS_OF_THE_LINK;
+		String result = SN.SVAROG_NOTIFICATIONS_INFO_FAILED_TO_CHANGE_STATUS_OF_THE_LINK;
 		Writer wr = null;
 		try (SvReader svr = new SvReader(sessionId); SvWriter svw = new SvWriter(svr)) {
 			wr = new Writer();
