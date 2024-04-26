@@ -91,12 +91,6 @@ public class Activator implements BundleActivator {
 	private ArrayList<Class<?>> jaxServiceClasses = initClasses();
 
 	/**
-	 * List of classes implementing ISvExecutor which we will later use for
-	 * registration in the bundle startup
-	 */
-	private ArrayList<ISvExecutor> executorServiceClasses = initExecutors();
-
-	/**
 	 * List of executor objects to be used for initialisation
 	 * 
 	 * @return Map with executors
