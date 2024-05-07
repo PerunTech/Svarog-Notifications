@@ -1,0 +1,37 @@
+{
+  "navigation": {
+    "items": [
+      {
+        "id": "create_message",
+        "labelCode": "Create new message",
+        "icon": "email",
+        "action": "generateForm",
+        "className": "create-new-msg"
+      },
+      {
+        "id": "search",
+        "labelCode": "Search",
+        "icon": "search",
+        "action": "search"
+      },
+      {
+        "id": "msg_inbox",
+        "labelCode": "Inbox",
+        "icon": "inbox",
+        "action": "msg_inbox"
+      },
+      {
+        "id": "msg_sent",
+        "labelCode": "Sent",
+        "icon": "sent",
+        "action": "msg_sent"
+      },
+      {
+        "id": "msg_archived",
+        "labelCode": "Archived",
+        "icon": "archive",
+        "action": "msg_archived"
+      }
+    ]
+  }
+}

@@ -4,15 +4,15 @@
  * Wait to be called for render, Core will call you.
  */
 
-import Notifications from './components/Notifications';
+import MessagesWrapper from './components/MessagesWrapper';
 
 const routes = [
   {
     name: 'svarog-notifications',
     path: '/main/svarog-notifications',
-    render: Notifications,
+    render: MessagesWrapper,
     isExact: false,
   },
 ]
 
-export { Notifications, routes }
+export { MessagesWrapper, routes }
