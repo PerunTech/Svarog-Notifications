@@ -49,7 +49,7 @@ import com.prtech.svarog_common.ResponseHandler;
 import com.prtech.svarog_common.DbSearchCriterion.DbCompareOperand;
 import com.prtech.svarog_common.ResponseHandler.MessageType;
 
-@Path("/svarog_notifications/services")
+@Path("/SvarogNotificationsServices")
 public class SvarogNotificationsServices {
 	/**
 	 * Log4j instance used for logging

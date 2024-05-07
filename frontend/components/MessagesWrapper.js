@@ -56,8 +56,8 @@ class MessagesWrapper extends React.Component {
       params={'READ_URL'}
       key={tableName + '_FORM'}
       id={tableName + '_FORM'}
-      method={`/svarog_notifications/services/getTableJSONSchema/${svSession}/${tableName}`}
-      uiSchemaConfigMethod={`/svarog_notifications/services/getTableUISchema/${svSession}/${tableName}`}
+      method={`/SvarogNotificationsServices/getTableJSONSchema/${svSession}/${tableName}`}
+      uiSchemaConfigMethod={`/SvarogNotificationsServices/getTableUISchema/${svSession}/${tableName}`}
       hideBtns='closeAndDelete'
       addSaveFunction={(e) => this.saveForm(e)}
       customSave={true}
@@ -70,7 +70,7 @@ class MessagesWrapper extends React.Component {
 
   saveForm = (e) => {
     let { svSession } = this.props
-    let postUrl = window.server + '/svarog_notifications/services/createNewMessage/' + svSession
+    let postUrl = window.server + '/SvarogNotificationsServices/createNewMessage/' + svSession
     let form_params = e.formData
     // console.log(form_params)
     // console.log(flattenObject(form_params))

@@ -58,7 +58,7 @@ class SearchComponent extends React.Component {
     const { title, text, category, priority } = this.state
     const dataObj = { SUBJECT_TITLE: title, MSG_TEXT: text, SUBJECT_CATEGORY: category, SUBJECT_PRIORITY: priority }
     const data = jsonToURI(dataObj)
-    const url = `${window.server}/svarog_notifications/services/searchSubjects/${svSession}`
+    const url = `${window.server}/SvarogNotificationsServices/searchSubjects/${svSession}`
     const reqConfig = { method: 'post', data, url, headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
     axios(reqConfig).then(res => {
       if (title === '' && text === '' && category === '' && priority === '') {
@@ -66,7 +66,7 @@ class SearchComponent extends React.Component {
       } else {
         if (res && res.data) {
           const gridId = `${tableName}_SEARCH_GRID`
-          const gridConfig = `/svarog_notifications/services/getTableFieldList/${svSession}/${tableName}`
+          const gridConfig = `/SvarogNotificationsServices/getTableFieldList/${svSession}/${tableName}`
           const grid = <GenericGrid
             key={gridId}
             id={gridId}

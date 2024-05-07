@@ -25,7 +25,7 @@ class ArchiveMessages extends React.Component {
 
   getMessageSubject = () => {
     const { svSession, objId } = this.props
-    const url = window.server + `/svarog_notifications/services/getObjectsByParentId/${svSession}/${objId}/${tableName}/PKID/DESC`
+    const url = window.server + `/SvarogNotificationsServices/getObjectsByParentId/${svSession}/${objId}/${tableName}/PKID/DESC`
     axios.get(url)
       .then((response) => {
         if (response.data) {
@@ -39,7 +39,7 @@ class ArchiveMessages extends React.Component {
 
   getArchivedSubjectRecipientInfo = () => {
     const { svSession } = this.props
-    const url = window.server + `/svarog_notifications/services/getSentOrArchivedSubjectRecipientInfo/${svSession}/CLOSED`
+    const url = window.server + `/SvarogNotificationsServices/getSentOrArchivedSubjectRecipientInfo/${svSession}/CLOSED`
     axios.get(url)
       .then((response) => {
         if (response.data) {
@@ -186,7 +186,7 @@ class ArchiveMessages extends React.Component {
     }
     const data = jsonToURI(replyData)
     let { svSession } = this.props
-    let postUrl = window.server + '/svarog_notifications/services/createNewMessage/' + svSession
+    let postUrl = window.server + '/SvarogNotificationsServices/createNewMessage/' + svSession
     axios({
       method: 'post',
       data: data,

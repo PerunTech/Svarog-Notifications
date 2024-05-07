@@ -36,8 +36,8 @@ class SentComponent extends React.Component {
       gridType={'READ_URL'}
       key={gridId}
       id={gridId}
-      configTableName={'/svarog_notifications/services/getTableFieldList/%session/' + tableName}
-      dataTableName={'/svarog_notifications/services/getSentSubjects/%session'}
+      configTableName={'/SvarogNotificationsServices/getTableFieldList/%session/' + tableName}
+      dataTableName={'/SvarogNotificationsServices/getSentSubjects/%session'}
       minHeight={720}
       onRowClickFunct={this.onSentRowClick}
       customClassName={'customGridClass'}

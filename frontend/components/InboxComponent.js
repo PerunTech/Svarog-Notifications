@@ -32,7 +32,7 @@ class InboxComponent extends React.Component {
   getTotalNumberPages = async () => {
     const { svSession } = this.props
     const { perPage } = this.state
-    const url = window.server + `/svarog_notifications/services/countTotalNumberOfObjectsPerCategory/${svSession}/INBOX`
+    const url = window.server + `/SvarogNotificationsServices/countTotalNumberOfObjectsPerCategory/${svSession}/INBOX`
     try {
       const response = await axios.get(url)
       if (response.data) {
@@ -59,8 +59,8 @@ class InboxComponent extends React.Component {
       gridType={'READ_URL'}
       key={gridId}
       id={gridId}
-      configTableName={'/svarog_notifications/services/getTableFieldList/%session/' + tableName}
-      dataTableName={`/svarog_notifications/services/getInboxSubjectsWithPagination/%session/${start}/${end}`}
+      configTableName={'/SvarogNotificationsServices/getTableFieldList/%session/' + tableName}
+      dataTableName={`/SvarogNotificationsServices/getInboxSubjectsWithPagination/%session/${start}/${end}`}
       minHeight={500}
       onRowClickFunct={this.onInboxRowClick}
       customClassName={'customGridClass'}
