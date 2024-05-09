@@ -5,6 +5,8 @@
  */
 
 import MessagesWrapper from './components/MessagesWrapper';
+import './components/style/search.css'
+import './components/style/style.css'
 
 const routes = [
   {

@@ -13,6 +13,10 @@
 
 }
 
+.form-control {
+  background-color: rgb(237 237 237 / 80%) !important;
+}
+
 .form-secondary {
   border: 1px solid #93c4bf;
   border-radius: 5px;
@@ -36,6 +40,7 @@
 .input-label {
   text-align: center;
 }
+
 .input {
   width: 78%;
   border: 1px solid #f5f5f5f7;
@@ -163,6 +168,7 @@
   color: rgb(0, 0, 0);
   text-decoration: none;
 }
+
 .button-secondary:focus {
   outline: none;
 }
