@@ -139,11 +139,14 @@ class MessagesWrapper extends React.Component {
           </div>
         </div>
         <div id='right-container' className={style['right-container']}>
-          {form}
-          {inboxComponent}
-          {sentComponent}
-          {archiveComponent}
-          {searchComponent}
+          <div className='form-message'>
+            {form}
+            {inboxComponent}
+            {sentComponent}
+            {archiveComponent}
+            {searchComponent}
+          </div>
+
         </div>
       </div>
     )

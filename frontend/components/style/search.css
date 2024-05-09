@@ -2,7 +2,7 @@
   width: 20%;
 }
 
-.form {
+.form-message .form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,6 +11,10 @@
   padding: 9px;
   border-radius: 5px;
 
+}
+
+.form-message .form-control {
+  background-color: rgb(237 237 237 / 80%) !important;
 }
 
 .form-secondary {
@@ -36,6 +40,7 @@
 .input-label {
   text-align: center;
 }
+
 .input {
   width: 78%;
   border: 1px solid #f5f5f5f7;
@@ -163,6 +168,7 @@
   color: rgb(0, 0, 0);
   text-decoration: none;
 }
+
 .button-secondary:focus {
   outline: none;
 }
