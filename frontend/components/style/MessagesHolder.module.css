@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@900&display=swap'); */
 
 .container {
   height: 94vh;
@@ -41,7 +41,7 @@
   margin-left: 7vh;
 }
 
-.right-container{
+.right-container {
   background-color: #ffffffad;
   width: 76%;
   height: 92%;
@@ -80,15 +80,17 @@
   border-bottom: 3px solid rgba(215, 173, 149, 0);
 }
 
-.context-menu-button:hover { 
+.context-menu-button:hover {
   border-bottom: 3px solid #dbaf96;
   padding: 1vh;
 }
+
 .context-menu-button:focus {
   outline: none;
   font-weight: bold;
   border-bottom: 3px solid #dbaf96;
 }
+
 .create-new-msg {
   background-image: linear-gradient(to right, #dbaf96 0%, #ffe8d7 51%, #dbaf96 100%);
   color: black;
@@ -143,6 +145,7 @@ p.archive-paragraph {
     transform: translateX(-1000px);
     opacity: 0;
   }
+
   100% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
@@ -156,6 +159,7 @@ p.archive-paragraph {
     transform: translateX(-1000px);
     opacity: 0;
   }
+
   100% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
@@ -169,6 +173,7 @@ p.archive-paragraph {
     transform: translateX(1000px);
     opacity: 0;
   }
+
   100% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
@@ -182,6 +187,7 @@ p.archive-paragraph {
     transform: translateX(1000px);
     opacity: 0;
   }
+
   100% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
