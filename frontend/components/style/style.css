@@ -33,17 +33,13 @@
   padding: 5px;
   color: white;
   margin-bottom: 3vh;
-}
-
-.field-object {
-  text-align: center;
-}
-
-legend {
   font-weight: 600;
   text-align: center;
-  color: #096158;
   border-bottom: 1px solid #3f8d85
+}
+
+.message-form .field-object {
+  text-align: center;
 }
 
 .message-users-info .Select-placeholder {
