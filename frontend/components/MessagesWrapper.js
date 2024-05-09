@@ -58,6 +58,7 @@ class MessagesWrapper extends React.Component {
       id={tableName + '_FORM'}
       method={`/SvarogNotificationsServices/getTableJSONSchema/${svSession}/${tableName}`}
       uiSchemaConfigMethod={`/SvarogNotificationsServices/getTableUISchema/${svSession}/${tableName}`}
+      tableFormDataMethod={`/ReactElements/getTableFormData/${svSession}/0/${tableName}`}
       hideBtns='closeAndDelete'
       addSaveFunction={(e) => this.saveForm(e)}
       customSave={true}
