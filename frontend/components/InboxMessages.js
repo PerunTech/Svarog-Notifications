@@ -1,10 +1,8 @@
 import { React, connect, PropTypes, axios, createHashHistory, elements } from 'perun-core'
 const { alertUser } = elements
-import style from './style/MessagesHolder.module.css'
 import { iconManager } from './svgHolder';
 import format from 'date-fns/format'
 import en from 'date-fns/locale/en-US'
-import './style/inbox-message.css'
 import { jsonToURI } from '../utils/utils';
 
 const tableName = 'MESSAGE'
@@ -214,8 +212,8 @@ class InboxMessages extends React.Component {
     return (
       <React.Fragment>
         {titleMsg}
-        <div className={style['context-menu-holder']}>
-          <p className={style['inbox-paragraph']}>Inbox Message</p>
+        <div className='context-menu-holder'>
+          <p className='inbox-paragraph'>Inbox Message</p>
           <button className='btnBack' onClick={() => this.props.handleBack()}>{iconManager.getIcon('back')}Back</button>
           {generatedValues}
           {generatedReplyValues}

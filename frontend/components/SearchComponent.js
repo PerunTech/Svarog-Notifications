@@ -4,6 +4,7 @@ import { iconManager } from './svgHolder'
 import { getMainLabel } from '../utils/labels'
 import { jsonToURI } from '../utils/utils'
 
+
 const tableName = 'SUBJECT'
 
 class SearchComponent extends React.Component {

@@ -1,14 +1,12 @@
 import { React, connect, PropTypes, GenericForm, elements, axios } from 'perun-core'
 const { alertUser } = elements
 import contextMenu from '../../backend/configuration/ContextMenu.json'
-import style from './style/MessagesHolder.module.css'
 import { iconManager } from './svgHolder';
 import { flattenObject, jsonToURI } from '../utils/utils';
 import InboxComponent from './InboxComponent';
 import SentComponent from './SentComponent';
 import ArchiveComponent from './ArchiveComponent';
 import SearchComponent from './SearchComponent';
-
 const tableName = 'MESSAGE'
 
 class MessagesWrapper extends React.Component {
@@ -40,8 +38,8 @@ class MessagesWrapper extends React.Component {
       } else {
         className = 'context-menu-button'
       }
-      htmlElement = <div className={style['context-menu-holder']}>
-        <button onClick={() => this.doAction(contextMenu[i].id)} className={style[className]} key={contextMenu[i].id} id={contextMenu[i].id}>{iconManager.getIcon(contextMenu[i].icon)}{contextMenu[i].labelCode}</button>
+      htmlElement = <div className='context-menu-holder'>
+        <button onClick={() => this.doAction(contextMenu[i].id)} className={className} key={contextMenu[i].id} id={contextMenu[i].id}>{iconManager.getIcon(contextMenu[i].icon)}{contextMenu[i].labelCode}</button>
       </div>
       elementArr.push(htmlElement)
     }
@@ -130,25 +128,27 @@ class MessagesWrapper extends React.Component {
   render() {
     const { generateElement, form, inboxComponent, sentComponent, archiveComponent, searchComponent } = this.state
     return (
-      <div id='container' className={style['container']}>
-        <div id='left-container' className={style['left-container']}>
-          <p className={style['context-menu-paragraph']}>Folders</p>
-          {generateElement}
-          <div className={style['left-container-icon']}>
-            {iconManager.getIcon('message-vector-icon')}
+      <div className='svarog-notifications'>
+        <div id='container' className='container'>
+          <div id='left-container' className='left-container'>
+            <p className='context-menu-paragraph'>Folders</p>
+            {generateElement}
+            <div className='left-container-icon'>
+              {iconManager.getIcon('message-vector-icon')}
+            </div>
           </div>
-        </div>
-        <div id='right-container' className={style['right-container']}>
-          <div className='form-message'>
-            {form}
-            {inboxComponent}
-            {sentComponent}
-            {archiveComponent}
-            {searchComponent}
+          <div id='right-container' className='right-container'>
+            <div className='form-message'>
+              {form}
+              {inboxComponent}
+              {sentComponent}
+              {archiveComponent}
+              {searchComponent}
+            </div>
           </div>
-
         </div>
       </div>
+
     )
   }
 }
