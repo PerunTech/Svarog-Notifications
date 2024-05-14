@@ -39,11 +39,6 @@ class MessagesWrapper extends React.Component {
     }
   }
 
-  updateContextMenu = () => {
-    this.getContextMenu(this.state.contextMenuItems);
-    this.setState({ inboxComponent: <InboxComponent location={this.props.location} /> });
-  };
-
   getContextMenu = (contextMenuItems) => {
     let htmlElement
     let elementArr = []
