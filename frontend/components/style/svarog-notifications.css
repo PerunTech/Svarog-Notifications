@@ -675,7 +675,7 @@ button.btn.btn-default.array-item-move-up {
 .svarog-notifications .left-container {
     width: 20%;
     height: 92vh;
-    background: #4b5d55;
+    background: #304040;
     display: inline-block;
     overflow: hidden;
     box-shadow: 3px 0px 5px #d0d0d0;
@@ -765,10 +765,10 @@ button.btn.btn-default.array-item-move-up {
     left: 25px;
     box-sizing: border-box;
     appearance: none;
-    background-color: transparent;
+    background-color: #e0ab11;
     border: 2px solid #e0ab11;
     border-radius: 0.6em;
-    color: #e0ab11;
+    color: white;
     cursor: pointer;
     display: flex;
     align-self: center;
@@ -781,14 +781,15 @@ button.btn.btn-default.array-item-move-up {
     text-align: center;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    font-weight: 500;
 
 
 }
 
 .create-new-msg.active {
     background-color: #e0ab11 !important;
-    color: white !important
+    color: white !important;
+    font-weight: 700;
 }
 
 .create-new-msg:hover {
