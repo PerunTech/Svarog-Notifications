@@ -1,8 +1,5 @@
 import { React, connect, PropTypes, GenericGrid, ComponentManager } from 'perun-core'
 import ArchiveMessages from './ArchiveMessages';
-import style from './style/MessagesHolder.module.css'
-// import { iconManager } from './svgHolder'; 
-
 const tableName = 'SUBJECT'
 
 class ArchiveComponent extends React.Component {
@@ -28,8 +25,8 @@ class ArchiveComponent extends React.Component {
   showArchiveGrid = () => {
     const { gridId } = this.state
     let gridElementArr = []
-    let htmlElement = <div className={style['context-menu-holder']}>
-      <p className={style['archive-paragraph']}>Archived</p>
+    let htmlElement = <div className='context-menu-holder'>
+      <p className='archive-paragraph'>Archived</p>
     </div>
     let grid = <GenericGrid
       gridType={'READ_URL'}
@@ -37,7 +34,7 @@ class ArchiveComponent extends React.Component {
       id={gridId}
       configTableName={'/SvarogNotificationsServices/getTableFieldList/%session/' + tableName}
       dataTableName={'/SvarogNotificationsServices/getArchivedSubjects/%session'}
-      minHeight={740}
+      minHeight={760}
       onRowClickFunct={this.onArchiveRowClick}
       customClassName={'customGridClass'}
     />

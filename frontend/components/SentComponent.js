@@ -1,8 +1,6 @@
 import { React, connect, PropTypes, GenericGrid, ComponentManager } from 'perun-core'
 import SentMessages from './SentMessages';
-import style from './style/MessagesHolder.module.css'
-// import { iconManager } from './svgHolder'; 
-
+import { iconManager } from './svgHolder';
 const tableName = 'SUBJECT'
 
 class SentComponent extends React.Component {
@@ -29,8 +27,8 @@ class SentComponent extends React.Component {
   showSentGrid = () => {
     const { gridId } = this.state
     let gridElementArr = []
-    let htmlElement = <div className={style['context-menu-holder']}>
-      <p className={style['sent-paragraph']}>Sent</p>
+    let htmlElement = <div className='context-menu-holder'>
+      <p className='sent-paragraph'>Sent</p>
     </div>
     let grid = <GenericGrid
       gridType={'READ_URL'}
@@ -38,7 +36,7 @@ class SentComponent extends React.Component {
       id={gridId}
       configTableName={'/SvarogNotificationsServices/getTableFieldList/%session/' + tableName}
       dataTableName={'/SvarogNotificationsServices/getSentSubjects/%session'}
-      minHeight={720}
+      minHeight={760}
       onRowClickFunct={this.onSentRowClick}
       customClassName={'customGridClass'}
     />

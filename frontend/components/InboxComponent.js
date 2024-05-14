@@ -1,8 +1,6 @@
 import { React, connect, PropTypes, GenericGrid, createHashHistory, axios, ComponentManager } from 'perun-core'
 import InboxMessages from './InboxMessages';
-import style from './style/MessagesHolder.module.css'
 import ReactPaginate from 'react-paginate';
-
 const hashHistory = createHashHistory()
 
 const tableName = 'SUBJECT'
@@ -52,8 +50,8 @@ class InboxComponent extends React.Component {
   showInboxGrid = (start, end) => {
     const { gridId } = this.state
     let gridElementArr = []
-    const htmlElement = <div className={style['context-menu-holder']}>
-      <p className={style['inbox-paragraph']}>Inbox</p>
+    const htmlElement = <div className='context-menu-holder'>
+      <p className='inbox-paragraph'>Inbox</p>
     </div>
     const grid = <GenericGrid
       gridType={'READ_URL'}
@@ -61,7 +59,7 @@ class InboxComponent extends React.Component {
       id={gridId}
       configTableName={'/SvarogNotificationsServices/getTableFieldList/%session/' + tableName}
       dataTableName={`/SvarogNotificationsServices/getInboxSubjectsWithPagination/%session/${start}/${end}`}
-      minHeight={500}
+      minHeight={760}
       onRowClickFunct={this.onInboxRowClick}
       customClassName={'customGridClass'}
     />
