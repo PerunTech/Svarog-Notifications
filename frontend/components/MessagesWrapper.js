@@ -24,7 +24,14 @@ class MessagesWrapper extends React.Component {
   }
 
   componentDidMount() {
-    this.updateContextMenu();
+    const idScreen = document.getElementById('identificationScreen')
+    if (idScreen) {
+      idScreen.innerText = this.context.intl.formatMessage({
+        id: 'perun.plugin.svarog-notifications', defaultMessage: 'perun.plugin.svarog-notifications'
+      })
+    }
+    this.getContextMenu(this.state.contextMenuItems);
+    this.setState({ inboxComponent: <InboxComponent location={this.props.location} /> })
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.clickedButtonId !== this.state.clickedButtonId) {
