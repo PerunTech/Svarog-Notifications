@@ -27,7 +27,6 @@
     cursor: pointer;
 }
 
-
 .form-group.field.field-object.subject-form {
     position: relative;
     bottom: 80px;
@@ -125,7 +124,6 @@ button.btn.btn-default.array-item-move-up {
     top: 140px;
     right: 40px;
 
-
 }
 
 .btn-group>.btn:not(:first-child) {
@@ -211,7 +209,6 @@ button.btn.btn-default.array-item-move-up {
 
 }
 
-
 */ .customGridClass .react-grid-Container {
     clear: both;
     /* margin-top: 5%; */
@@ -239,7 +236,7 @@ button.btn.btn-default.array-item-move-up {
 
 .customGridClass .react-grid-Row {
     cursor: pointer;
-    /* height: 50px !important;  */
+    /* height: 50px !important; */
 }
 
 .customGridClass .react-grid-Row.row-selected {
@@ -249,7 +246,6 @@ button.btn.btn-default.array-item-move-up {
     -moz-transition: background-color 500ms ease, color 500ms ease;
     transition: background-color 500ms ease, color 500ms ease;
 }
-
 
 .customGridClass .react-grid-Header {
     background: rgb(252 223 204) !important;
@@ -282,8 +278,8 @@ button.btn.btn-default.array-item-move-up {
     display: block;
 
     /* background-color: rgb(240, 223, 171) !important;
-  margin-right: 5px;
-  border: none !important; */
+    margin-right: 5px;
+    border: none !important; */
 }
 
 .customGridClass .react-grid-Toolbar .btn:hover {
@@ -472,7 +468,6 @@ button.btn.btn-default.array-item-move-up {
     background-color: #ffffff73;
     width: inherit;
 }
-
 
 .control-label .array-item {
     width: 700px;
@@ -671,14 +666,10 @@ button.btn.btn-default.array-item-move-up {
 }
 
 
-
 .svarog-notifications .left-container {
     width: 20%;
-    height: 92vh;
-    background: #304040;
-    display: inline-block;
     overflow: hidden;
-    box-shadow: 3px 0px 5px #d0d0d0;
+    background: #304040;
     -moz-animation-name: slide-in-left;
     -moz-animation-iteration-count: 1;
     -moz-animation-timing-function: ease-in;
@@ -687,10 +678,13 @@ button.btn.btn-default.array-item-move-up {
     -webkit-animation-iteration-count: 1;
     -webkit-animation-timing-function: ease-in;
     -webkit-animation-duration: 0.5s;
-    animation-name: slide-in-right;
+    animation-name: slide-in-left;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
     animation-duration: 0.5s;
+    padding-bottom: 20px;
+    height: 100%;
+    font-size: 0.9vw;
 }
 
 .left-container-icon {
@@ -710,7 +704,7 @@ button.btn.btn-default.array-item-move-up {
     box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 38%);
     display: inline-block;
     overflow: hidden;
-    /* padding-bottom: 3.5vh;  */
+    /* padding-bottom: 3.5vh; */
     -moz-animation-name: slide-in-left;
     -moz-animation-iteration-count: 1;
     -moz-animation-timing-function: ease-in;
@@ -725,27 +719,28 @@ button.btn.btn-default.array-item-move-up {
     animation-duration: 0.5s;
 }
 
-.svarog-notifications .context-menu-holder {
-    padding: 0.5vh;
-    margin-left: 1vh;
-}
-
-
-
 .context-menu-button {
-    background-color: transparent;
+    background: #304040;
+    color: white;
     border: none;
-    padding: 1vh;
-    width: 100%;
+    margin: 1vh;
     text-align: start;
-    border-bottom: 3px solid rgba(215, 173, 149, 0);
-    color: white
+    border-left: 3px solid #5b7065;
+    outline: 0 !important;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: auto;
+    min-height: 45px;
+    width: 96%;
 }
 
 
 
 .context-menu-button:hover {
-    background-color: #668168;
+    border-left: 3px solid #ffffff;
+    border-radius: 4px;
+    background: #6681688e;
 }
 
 .context-menu-button:focus {
@@ -755,14 +750,16 @@ button.btn.btn-default.array-item-move-up {
 }
 
 .context-menu-button.active {
-    background-color: #668168 !important;
-    font-weight: bold;
+    background: #668168;
+    outline: none;
+    border-radius: 4px;
+    border-left: 3px solid #8bc34a;
 
 }
 
 .create-new-msg {
     position: relative;
-    left: 25px;
+    left: 40px;
     box-sizing: border-box;
     appearance: none;
     background-color: #e0ab11;
@@ -783,7 +780,6 @@ button.btn.btn-default.array-item-move-up {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
 
-
 }
 
 .create-new-msg.active {
@@ -796,6 +792,7 @@ button.btn.btn-default.array-item-move-up {
     background-color: #668168;
     background-position: right center;
     text-decoration: none;
+    border: 2px solid #668168;
 }
 
 .create-new-msg:focus {
