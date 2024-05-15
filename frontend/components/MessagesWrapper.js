@@ -18,7 +18,7 @@ class MessagesWrapper extends React.Component {
       sentComponent: undefined,
       archiveComponent: undefined,
       searchComponent: undefined,
-      clickedButtonId: '',
+      clickedButtonId: 'msg_inbox',
     };
 
   }
@@ -50,25 +50,16 @@ class MessagesWrapper extends React.Component {
       } else {
         className = 'context-menu-button'
       }
-      const isActive = (contextMenu[i].id === 'msg_inbox' && !this.state.clickedButtonId) || this.state.clickedButtonId === contextMenu[i].id || this.state.clickedButtonId === contextMenu[i].className;
-      htmlElement = (
-        <div className='context-menu-holder'>
-          <button
-            onClick={() => this.doAction(contextMenu[i].id)}
-            className={`${className} ${isActive ? 'active' : ''}`}
-            key={contextMenu[i].id}
-            id={contextMenu[i].id}
-          >
-            {iconManager.getIcon(contextMenu[i].icon)}
-            {contextMenu[i].labelCode}
-          </button>
-        </div>
-      );
-      elementArr.push(htmlElement);
+      const isActive = this.state.clickedButtonId === contextMenu[i].id || this.state.clickedButtonId === contextMenu[i].className;
+      htmlElement = <div className='context-menu-holder'>
+        <button onClick={() => this.doAction(contextMenu[i].id)} className={`${className} ${isActive ? 'active' : ''}`} key={contextMenu[i].id} id={contextMenu[i].id}>{iconManager.getIcon(contextMenu[i].icon)}{contextMenu[i].labelCode}</button>
+      </div>
+      elementArr.push(htmlElement)
     }
-    this.setState({ generateElement: elementArr });
+    this.setState({ generateElement: elementArr })
     return elementArr;
-  };
+  }
+
 
 
   generateForm = () => {
