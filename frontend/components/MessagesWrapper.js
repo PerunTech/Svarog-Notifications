@@ -18,7 +18,7 @@ class MessagesWrapper extends React.Component {
       sentComponent: undefined,
       archiveComponent: undefined,
       searchComponent: undefined,
-      clickedButtonId: '',
+      clickedButtonId: 'msg_inbox',
     };
 
   }
@@ -59,6 +59,8 @@ class MessagesWrapper extends React.Component {
     this.setState({ generateElement: elementArr })
     return elementArr;
   }
+
+
 
   generateForm = () => {
     const { svSession } = this.props
