@@ -17,7 +17,8 @@ class MessagesWrapper extends React.Component {
       inboxComponent: undefined,
       sentComponent: undefined,
       archiveComponent: undefined,
-      searchComponent: undefined
+      searchComponent: undefined,
+      clickedButtonId: '',
     };
 
   }
@@ -32,6 +33,11 @@ class MessagesWrapper extends React.Component {
     this.getContextMenu(this.state.contextMenuItems);
     this.setState({ inboxComponent: <InboxComponent location={this.props.location} /> })
   }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.clickedButtonId !== this.state.clickedButtonId) {
+      this.getContextMenu(this.state.contextMenuItems);
+    }
+  }
 
   getContextMenu = (contextMenuItems) => {
     let htmlElement
@@ -44,14 +50,15 @@ class MessagesWrapper extends React.Component {
       } else {
         className = 'context-menu-button'
       }
+      const isActive = this.state.clickedButtonId === contextMenu[i].id || this.state.clickedButtonId === contextMenu[i].className;
       htmlElement = <div className='context-menu-holder'>
-        <button onClick={() => this.doAction(contextMenu[i].id)} className={className} key={contextMenu[i].id} id={contextMenu[i].id}>{iconManager.getIcon(contextMenu[i].icon)}{contextMenu[i].labelCode}</button>
+        <button onClick={() => this.doAction(contextMenu[i].id)} className={`${className} ${isActive ? 'active' : ''}`} key={contextMenu[i].id} id={contextMenu[i].id}>{iconManager.getIcon(contextMenu[i].icon)}{contextMenu[i].labelCode}</button>
       </div>
       elementArr.push(htmlElement)
     }
     this.setState({ generateElement: elementArr })
+    return elementArr;
   }
-
 
   generateForm = () => {
     const { svSession } = this.props
@@ -104,31 +111,36 @@ class MessagesWrapper extends React.Component {
   }
 
   doAction(actionType) {
-    if (actionType) {
-      switch (actionType) {
-        case 'search': {
-          this.setState({ searchComponent: <SearchComponent />, sentComponent: undefined, form: undefined, archiveComponent: undefined, inboxComponent: undefined })
-          break;
-        }
-        case 'create_message': {
-          this.generateForm()
-          this.setState({ searchComponent: undefined, inboxComponent: undefined, archiveComponent: undefined, sentComponent: undefined })
-          break;
-        }
-        case 'msg_inbox': {
-          this.setState({ inboxComponent: <InboxComponent location={this.props.location} />, sentComponent: undefined, form: undefined, archiveComponent: undefined, searchComponent: undefined })
-          break;
-        }
-        case 'msg_sent': {
-          this.setState({ sentComponent: <SentComponent />, inboxComponent: undefined, form: undefined, archiveComponent: undefined, searchComponent: undefined })
-          break;
-        }
-        case 'msg_archived': {
-          this.setState({ archiveComponent: <ArchiveComponent />, inboxComponent: undefined, sentComponent: undefined, form: undefined, searchComponent: undefined })
-          break;
+    this.setState({ clickedButtonId: actionType }, () => {
+      if (actionType) {
+        switch (actionType) {
+          case 'search': {
+            this.setState({ searchComponent: <SearchComponent />, sentComponent: undefined, form: undefined, archiveComponent: undefined, inboxComponent: undefined });
+            break;
+          }
+          case 'create_message': {
+            this.generateForm();
+            this.setState({ searchComponent: undefined, inboxComponent: undefined, archiveComponent: undefined, sentComponent: undefined });
+            break;
+          }
+          case 'msg_inbox': {
+            this.setState({ inboxComponent: <InboxComponent location={this.props.location} />, sentComponent: undefined, form: undefined, archiveComponent: undefined, searchComponent: undefined });
+            break;
+          }
+          case 'msg_sent': {
+            this.setState({ sentComponent: <SentComponent />, inboxComponent: undefined, form: undefined, archiveComponent: undefined, searchComponent: undefined });
+            break;
+          }
+          case 'msg_archived': {
+            this.setState({ archiveComponent: <ArchiveComponent />, inboxComponent: undefined, sentComponent: undefined, form: undefined, searchComponent: undefined });
+            break;
+          }
+          default:
+            break;
         }
       }
-    }
+    });
+
   }
 
   render() {
