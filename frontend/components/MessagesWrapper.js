@@ -149,7 +149,6 @@ class MessagesWrapper extends React.Component {
       <div className='svarog-notifications'>
         <div id='container' className='container'>
           <div id='left-container' className='left-container'>
-            <p className='context-menu-paragraph'>Folders</p>
             {generateElement}
             <div className='left-container-icon'>
               {iconManager.getIcon('message-vector-icon')}
