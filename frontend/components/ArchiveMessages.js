@@ -31,7 +31,8 @@ class ArchiveMessages extends React.Component {
         }
       })
       .catch((error) => {
-        console.error('error')
+        console.error(error);
+        alertUser(true, 'error', error.response?.data?.title || '', error.response?.data?.message || '');
       })
   }
 
@@ -46,7 +47,8 @@ class ArchiveMessages extends React.Component {
         }
       })
       .catch((error) => {
-        console.error('error')
+        console.error(error);
+        alertUser(true, 'error', error.response?.data?.title || '', error.response?.data?.message || '');
       })
   }
 
@@ -201,9 +203,8 @@ class ArchiveMessages extends React.Component {
       }
     })
       .catch((error) => {
-        if (error.data) {
-          alertUser(true, error.data.type.toLowerCase(), response.data.title, error.data.message)
-        }
+        console.error(error);
+        alertUser(true, 'error', error.response?.data?.title || '', error.response?.data?.message || '');
       })
   }
 

@@ -38,7 +38,8 @@ class InboxComponent extends React.Component {
         this.setState({ totalNumber: response.data, pageCount })
       }
     } catch (err) {
-      console.log(err);
+      console.error(err);
+      alertUser(true, 'err', err.response?.data?.title || '', err.response?.data?.message || '');
     }
   }
 
