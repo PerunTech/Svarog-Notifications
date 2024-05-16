@@ -1,4 +1,4 @@
-import { React, connect, PropTypes, GenericGrid, createHashHistory, axios, ComponentManager, elements } from 'perun-core'
+import { React, connect, PropTypes, ExportableGrid, createHashHistory, axios, ComponentManager, elements } from 'perun-core'
 const { alertUser } = elements
 import InboxMessages from './InboxMessages';
 import ReactPaginate from 'react-paginate';
@@ -55,13 +55,13 @@ class InboxComponent extends React.Component {
     const htmlElement = <div className='context-menu-holder'>
       <p className='inbox-paragraph'>Inbox</p>
     </div>
-    const grid = <GenericGrid
+    const grid = <ExportableGrid
       gridType={'READ_URL'}
       key={gridId}
       id={gridId}
       configTableName={'/SvarogNotificationsServices/getTableFieldList/%session/' + tableName}
       dataTableName={`/SvarogNotificationsServices/getInboxSubjectsWithPagination/%session/${start}/${end}`}
-      minHeight={600}
+      minHeight={640}
       onRowClickFunct={this.onInboxRowClick}
       customClassName={'customGridClass'}
     />
