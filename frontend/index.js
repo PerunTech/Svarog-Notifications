@@ -5,7 +5,6 @@
  */
 
 import MessagesWrapper from './components/MessagesWrapper';
-import './components/style/svarog-notifications.css'
 
 const routes = [
   {
