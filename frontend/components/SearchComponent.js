@@ -68,7 +68,7 @@ class SearchComponent extends React.Component {
     const url = `${window.server}/SvarogNotificationsServices/searchSubjects/${svSession}`
     const reqConfig = { method: 'post', data, url, headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
 
-    if (title === '' && text === '' && category === '' && priority === '') {
+    if (title === '' && text === '' && category === '' || category === '0' && priority === '' || priority === '0') {
       alertUser(true, 'error', 'Please enter at least one search value', null)
     } else {
       axios(reqConfig).then(res => {
