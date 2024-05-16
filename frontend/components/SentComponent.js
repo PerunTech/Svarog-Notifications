@@ -1,4 +1,4 @@
-import { React, connect, PropTypes, GenericGrid, ComponentManager } from 'perun-core'
+import { React, connect, PropTypes, ComponentManager, ExportableGrid } from 'perun-core'
 import SentMessages from './SentMessages';
 import { iconManager } from './svgHolder';
 const tableName = 'SUBJECT'
@@ -30,13 +30,13 @@ class SentComponent extends React.Component {
     let htmlElement = <div className='context-menu-holder'>
       <p className='sent-paragraph'>Sent</p>
     </div>
-    let grid = <GenericGrid
+    let grid = <ExportableGrid
       gridType={'READ_URL'}
       key={gridId}
       id={gridId}
       configTableName={'/SvarogNotificationsServices/getTableFieldList/%session/' + tableName}
       dataTableName={'/SvarogNotificationsServices/getSentSubjects/%session'}
-      minHeight={600}
+      minHeight={640}
       onRowClickFunct={this.onSentRowClick}
       customClassName={'customGridClass'}
     />

@@ -1,4 +1,4 @@
-import { React, connect, PropTypes, GenericGrid, ComponentManager } from 'perun-core'
+import { React, connect, PropTypes, ExportableGrid, ComponentManager } from 'perun-core'
 import ArchiveMessages from './ArchiveMessages';
 const tableName = 'SUBJECT'
 
@@ -28,13 +28,13 @@ class ArchiveComponent extends React.Component {
     let htmlElement = <div className='context-menu-holder'>
       <p className='archive-paragraph'>Archived</p>
     </div>
-    let grid = <GenericGrid
+    let grid = <ExportableGrid
       gridType={'READ_URL'}
       key={gridId}
       id={gridId}
       configTableName={'/SvarogNotificationsServices/getTableFieldList/%session/' + tableName}
       dataTableName={'/SvarogNotificationsServices/getArchivedSubjects/%session'}
-      minHeight={600}
+      minHeight={640}
       onRowClickFunct={this.onArchiveRowClick}
       customClassName={'customGridClass'}
     />
