@@ -38,9 +38,9 @@ class InboxComponent extends React.Component {
         const pageCount = Math.ceil(response.data / perPage)
         this.setState({ totalNumber: response.data, pageCount })
       }
-    } catch (err) {
-      console.error(err);
-      alertUser(true, 'err', err.response?.data?.title || '', err.response?.data?.message || '');
+    } catch (error) {
+      console.error(error);
+      alertUser(true, 'error', error.response?.data?.title || error, error.response?.data?.message || '');
     }
   }
 
