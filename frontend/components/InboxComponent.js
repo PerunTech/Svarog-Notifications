@@ -61,7 +61,7 @@ class InboxComponent extends React.Component {
       id={gridId}
       configTableName={'/SvarogNotificationsServices/getTableFieldList/%session/' + tableName}
       dataTableName={`/SvarogNotificationsServices/getInboxSubjectsWithPagination/%session/${start}/${end}`}
-      minHeight={760}
+      minHeight={600}
       onRowClickFunct={this.onInboxRowClick}
       customClassName={'customGridClass'}
     />
