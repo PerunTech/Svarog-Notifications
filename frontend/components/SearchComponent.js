@@ -35,7 +35,10 @@ class SearchComponent extends React.Component {
         })
         this.setState({ categories })
       }
-    }).catch(err => console.error(err))
+    }).catch((error) => {
+      console.error('error');
+      alertUser(true, 'error', error.response?.data?.title || '', error.response?.data?.message || '');
+    })
   }
 
 
@@ -51,7 +54,10 @@ class SearchComponent extends React.Component {
         })
         this.setState({ priorities })
       }
-    }).catch(err => console.error(err))
+    }).catch((error) => {
+      console.error('error');
+      alertUser(true, 'error', error.response?.data?.title || '', error.response?.data?.message || '');
+    })
   }
 
   handleSearch = () => {
@@ -83,8 +89,9 @@ class SearchComponent extends React.Component {
           this.setState({ grid: undefined }, () => this.setState({ grid }))
         }
       }
-    }).catch(err => {
-      alertUser(true, 'error', err)
+    }).catch((error) => {
+      console.error('error');
+      alertUser(true, 'error', error.response?.data?.title || '', error.response?.data?.message || '');
     })
   }
 
