@@ -1,0 +1,1132 @@
+.svarog-notifications .message-users-info .form-group.field.field-string {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-size: 1.2rem;
+    padding: 0.375rem 0.75rem;
+
+}
+
+.svarog-notifications .form-group.field.field-object.message-users-info .form-group.field.field-string {
+    width: 30% !important;
+    position: relative;
+    left: 5px
+}
+
+.svarog-notifications .custom-multi-select-dropdown>div {
+    background-color: white !important;
+}
+
+.svarog-notifications .Select-input>input {
+    background-color: white !important;
+}
+
+.svarog-notifications .Select-control {
+    width: 55% !important;
+}
+
+.svarog-notifications .Select--multi .Select-value {
+    background-color: #668168a6;
+    color: black
+}
+
+.svarog-notifications .Select.is-focused:not(.is-open)>.Select-control {
+
+    border-color: #668168a6 !important;
+}
+
+.svarog-notifications .form-group.field.field-object.new-message-form .form-control {
+    height: 200px !important;
+    width: 1090px !important;
+}
+
+.svarog-notifications .subject-title .form-group.field.field-string {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-size: 1.2rem;
+
+}
+
+.svarog-notifications .form-group.field.field-object.subject-form {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-size: 1.2rem;
+
+}
+
+.svarog-notifications .subject-title.form-group.field.field-object .form-group.field.field-string {
+    width: 78% !important;
+}
+
+.svarog-notifications .svarog-notifications.form-control {
+    background-color: rgb(237 237 237 / 80%) !important;
+    cursor: pointer;
+
+}
+
+.svarog-notifications .form-group.field.field-object.new-message-form {
+    position: relative;
+    bottom: 10px;
+}
+
+.svarog-notifications .form-group.field.field-object.new-message-form {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.svarog-notifications .message-form {
+    width: 99%;
+}
+
+.svarog-notifications .message-form .form-group.field.field-object .form-group.field.field-object legend,
+.message-form .form-group.field.field-array legend {
+    display: none;
+}
+
+.svarog-notifications .subject-form.form-group.field.field-object .form-group.field.field-string {
+    width: 20% !important;
+}
+
+.svarog-notifications .title-message-form legend {
+    text-transform: uppercase;
+    margin-left: 1vh;
+    font-size: 30px;
+    background-color: #4b5d55;
+    border-radius: 0px 0px 5px 5px;
+    padding: 5px;
+    color: white;
+    margin-bottom: 3vh;
+    font-weight: 500;
+    text-align: center;
+    box-shadow: 2px 2px 10px 2px #26303885
+}
+
+.svarog-notifications .message-users-info .Select-placeholder {
+    border-radius: 0.2rem;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    width: 90%;
+
+}
+
+.svarog-notifications .message-form button.btn.btn-danger.array-item-remove {
+    padding-left: 1vh !important;
+    padding-right: 1vh !important;
+    margin-left: -2vh;
+}
+
+.svarog-notifications button.btn.btn-danger.array-item-remove::after {
+    content: ' \0078';
+    font-weight: bold;
+}
+
+.svarog-notifications button.btn.btn-info.btn-add.col-xs-12::after {
+    content: ' \002B';
+}
+
+.svarog-notifications .message-form p.col-xs-3.col-xs-offset-9.text-right.array-item-add {
+    position: relative;
+    left: 10px;
+    margin-left: 3vh;
+}
+
+.svarog-notifications .array-item .btn-group {
+    width: 20px;
+}
+
+.svarog-notifications .row.array-item-list {
+    margin-left: 0vh;
+}
+
+.svarog-notifications button.btn.btn-default.array-item-move-up {
+    margin-right: -1vh;
+}
+
+.svarog-notifications .attachment-info .field-string,
+.field-integer,
+.field-number,
+.field-boolean #form .form-control {
+    margin-left: 1vh;
+}
+
+.svarog-notifications .message-form .btn-success {
+    color: white;
+    background-color: #4b5d55 !important;
+    position: relative;
+    bottom: 60px;
+    right: 1337px;
+}
+
+.svarog-notifications .btn-group>.btn:not(:first-child) {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.svarog-notifications .row.array-item-list {
+    margin-left: -1vh;
+}
+
+.svarog-notifications .array-item {
+    width: 1000px;
+}
+
+.svarog-notifications .message-form .btn_save_form {
+    background-image: none;
+}
+
+.svarog-notifications .success-custom-btn {
+    background-image: linear-gradient(to right, #cc8b68 0%, #ffe0c9 51%, #cf906e 100%);
+    color: black;
+    border: none;
+    padding: 1vh;
+    border-radius: 5px;
+    transition: 0.5s;
+    background-size: 200% auto;
+    box-shadow: 2px 1px 5px #838383;
+    display: block;
+    font-weight: bold;
+    margin-left: -11vh !important;
+}
+
+.svarog-notifications .success-custom-btn:hover {
+    background-position: right center;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.svarog-notifications .success-custom-btn:focus {
+    outline: 0;
+    box-shadow: 3px 3px 5px #595959;
+}
+
+.svarog-notifications .message-form .form-group.field.field-array.attachment-info {
+    position: relative;
+    bottom: 20px;
+    overflow: hidden;
+}
+
+.svarog-notifications .message-form .row.array-item-list {
+    margin-left: -1vh;
+}
+
+.svarog-notifications .message-form .row {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    width: 100%;
+
+}
+
+.svarog-notifications .message-form .row.array-item-list {
+    position: relative;
+    left: 5px;
+}
+
+.svarog-notifications .array-item .control-label {
+    display: none
+}
+
+.svarog-notifications .btn.btn-default.array-item-move-up {
+    display: none;
+}
+
+.svarog-notifications .btn.btn-default.array-item-move-down {
+    display: none;
+}
+
+.svarog-notifications .message-form .btn.btn-danger.array-item-remove {
+    background-color: #dc3546e5;
+    border-color: #dc3546e5;
+}
+
+.svarog-notifications .message-form .btn.btn-info.btn-add.col-xs-12 {
+    background-color: #e0ab11;
+    border-color: #e0ab11;
+
+}
+
+.svarog-notifications .customGridClass .react-grid-Container {
+    clear: both;
+    /* margin-top: 5%; */
+    padding-left: 1vh;
+    padding-right: 1vh;
+    color: black;
+}
+
+.customGridClass .react-grid-Main {
+    background-color: #fbf3e4 !important;
+    box-shadow: 1px 1px 20px rgba(36, 19, 8, 0.5);
+    border: none !important;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    outline: none !important;
+}
+
+.svarog-notifications .customGridClass .react-grid-Grid {
+    /*main rows */
+    background-color: #fbf3e4 !important;
+    border: none !important;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.svarog-notifications .customGridClass .react-grid-Row {
+    cursor: pointer;
+    /* height: 50px !important; */
+}
+
+.svarog-notifications .customGridClass .react-grid-Row.row-selected {
+    background-color: #f4e6be !important;
+    -webkit-transition: background-color 500ms ease, color 500ms ease;
+    -ms-transition: background-color 500ms ease, color 500ms ease;
+    -moz-transition: background-color 500ms ease, color 500ms ease;
+    transition: background-color 500ms ease, color 500ms ease;
+}
+
+.svarog-notifications .customGridClass .react-grid-Header {
+    background: rgb(252 223 204) !important;
+}
+
+.svarog-notifications .customGridClass .react-grid-Toolbar {
+    /*toolbar with buttons */
+    background-color: #7e5f4e !important;
+    box-shadow: 1px 1px 20px rgba(36, 19, 8, 0.5);
+    border-color: transparent !important;
+    border-image: repeat;
+    border-style: solid solid none;
+    border-width: 1px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: 0;
+    padding: 14px 15px 7px;
+    height: 48px;
+    margin-top: 5px;
+}
+
+.svarog-notifications .customGridClass .react-grid-Toolbar .btn {
+    background-image: linear-gradient(to right, #b6a196 0%, #fff3eb 51%, #b6a196 100%);
+    color: #333333;
+    width: 98%;
+    border: none;
+    border-radius: 5px;
+    transition: 0.5s;
+    background-size: 200% auto;
+    display: block;
+}
+
+.svarog-notifications .customGridClass .react-grid-Toolbar .btn:hover {
+    background-position: right center;
+    color: #333333;
+    text-decoration: none;
+    border: none;
+}
+
+.svarog-notifications .customGridClass .react-grid-Toolbar span {
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.svarog-notifications .customGridClass .react-grid-HeaderCell {
+    background-color: rgba(36, 19, 8, 0.5) !important;
+    border-right: 1px solid #000000 !important;
+    border-bottom: 1px solid #000000 !important;
+    height: auto;
+}
+
+.svarog-notifications .customGridClass .react-grid-HeaderCell .form-group input,
+.customGridClass .react-grid-HeaderCell .Select-control,
+.customGridClass .react-grid-HeaderCell .Select-menu-outer {
+    background-color: #e9f1da;
+}
+
+.svarog-notifications .svarog-notifications .Select-control {
+    width: 60%;
+}
+
+.svarog-notifications .customGridClass .react-grid-HeaderCell .is-open>.Select-control {
+    background-color: #e9f1da;
+}
+
+.svarog-notifications .customGridClass .react-grid-HeaderCell .Select-option {
+    background-color: #f6e1bc;
+    color: black;
+}
+
+.svarog-notifications .customGridClass .react-grid-HeaderCell-sortable {
+    font-size: 13px;
+    color: white;
+    white-space: normal;
+}
+
+.svarog-notifications .customGridClass .react-grid-Cell {
+    /* border-right: 1px solid #c1b1a4 !important; */
+    border-right: none !important;
+    border-bottom: 1px solid #c1b1a4 !important;
+    background-color: #fbf3e4 !important;
+    color: rgb(37, 37, 37);
+    word-wrap: normal;
+    font-size: 15px;
+}
+
+.svarog-notifications .customGridClass .reactGrid {
+    padding-right: 10px;
+    text-align: center;
+
+    -moz-animation-name: showEffect;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease-in;
+    -moz-animation-duration: 0.3s;
+
+    -webkit-animation-name: showEffect;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-duration: 0.3s;
+
+    animation-name: showEffect;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.3s;
+
+}
+
+.svarog-notifications .customGridClass .react-grid-Canvas {
+    background-color: #fbf3e4 !important;
+}
+
+.svarog-notifications .customGridClass .widget-HeaderCell__value {
+    width: auto;
+    white-space: normal;
+    word-wrap: normal;
+    color: white;
+    height: auto;
+    font-size: 11px;
+    padding: 1px;
+}
+
+@-moz-keyframes showEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+@-webkit-keyframes showEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes showEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.svarog-notifications .customGridClass .btn_exportCsv {
+    float: right;
+    margin-top: 0.5%;
+    margin-right: 1.5%;
+    width: 44px;
+    height: 44px;
+    border: none
+}
+
+.svarog-notifications .customGridClass .switch-grid-btn {
+    margin-left: 7px;
+    margin-top: 9px;
+    float: left;
+    background-color: rgba(1, 1, 1, 0.3);
+    height: 59px;
+    padding-top: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+}
+
+.svarog-notifications .customGridClass .react-contextmenu {
+    padding: 10px;
+    background-color: rgba(36, 19, 8, 0.8);
+    box-shadow: 1px 1px 5px rgba(36, 19, 8, 0.8);
+    border-radius: 5px;
+}
+
+.svarog-notifications .customGridClass .react-contextmenu-item {
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.svarog-notifications .customGridClass .pull-right {
+    display: contents;
+}
+
+.svarog-notifications .customGridClass {
+    text-align: center;
+}
+
+.svarog-notifications .svarog-notifications .search-holder {
+    width: 20%;
+}
+
+.svarog-notifications .form-message .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 9px;
+    border-radius: 5px;
+
+}
+
+.svarog-notifications .form-message .form-control {
+    background-color: rgb(255, 255, 255);
+    border-color: #d9d9d9 #ccc #b3b3b3 !important;
+    border-radius: 4px !important;
+    border: 1px solid #ccc;
+
+}
+
+.svarog-notifications .form-secondary {
+    border: 1px solid #93c4bf;
+    border-radius: 5px;
+    background-color: #ffffff73;
+    width: inherit;
+}
+
+.svarog-notifications .control-label .array-item {
+    width: 700px;
+}
+
+.svarog-notifications .form-fallback {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.45rem;
+    padding: 9px;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    box-shadow: 2px 3px 8px #8d8d8d;
+    background: #b5b5b52e;
+}
+
+.svarog-notifications .svarog-notifications .input-label {
+    text-align: center;
+}
+
+.svarog-notifications .input {
+    width: 78%;
+    border: 1px solid #f5f5f5f7;
+    height: 99%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-left: 10px;
+    font-size: 1em;
+    outline: none;
+}
+
+.svarog-notifications .input-secondary {
+    border: 1px solid #f5f5f5f7;
+    padding-left: 10px;
+    font-size: 1em;
+    height: 3rem;
+    outline: none;
+}
+
+.svarog-notifications .clickable-input {
+    cursor: pointer;
+}
+
+.svarog-notifications .clickable-input:disabled,
+.clickable-input:read-only {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.svarog-notifications .clickable-input-secondary {
+    border: 1px solid #f5f5f5f7;
+    padding-left: 10px;
+    font-size: 1em;
+    height: 3rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.svarog-notifications .clickable-input:hover,
+.clickable-input-secondary:hover {
+    background-color: #e0edf9;
+    transition: all ease-in-out 0.3s;
+}
+
+.svarog-notifications .values-container {
+    width: 100%;
+    height: 45px;
+}
+
+.svarog-notifications .values-container-secondary {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: start;
+}
+
+.svarog-notifications .values-container input,
+.values-container select {
+    background-color: rgb(237 237 237 / 80%) !important;
+    border-radius: 3px !important;
+}
+
+.svarog-notifications .criteria-container {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.svarog-notifications .criteria-paragraph {
+    margin-bottom: 2px;
+    margin-left: 3px;
+    color: #1f1f1f;
+}
+
+.svarog-notifications .dropdown {
+    border: 1px solid rgb(57 133 125 / 52%);
+    padding-left: 6px;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 1em;
+    background: rgb(255 255 255 / 80%);
+}
+
+.svarog-notifications .secondary-dropdown {
+    border: 1px solid rgb(95 168 211 / 50%);
+    padding-left: 6px;
+    width: 78%;
+    height: 96%;
+    border-radius: 5px 0 0 5px;
+    font-size: 1em;
+    background: rgb(95 168 211 / 50%);
+}
+
+.svarog-notifications .button {
+    width: 22%;
+    border: 1px solid #f5f5f5f7;
+    border-radius: 0px 5px 5px 0;
+    height: 100%;
+    background-color: #0a6259;
+    color: #ffffff;
+    font-weight: 100;
+    font-size: 1em;
+}
+
+.svarog-notifications .button-secondary {
+    background-color: #0a6259;
+    color: white;
+    border-radius: 5px;
+    transition: 0.5s;
+    background-size: 200% auto;
+    box-shadow: 2px 1px 5px #838383;
+    width: 11vh;
+    border-radius: 5px;
+    height: 38px;
+    margin-left: 1vh;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 27px;
+    border: none;
+}
+
+.svarog-notifications .button-secondary:hover {
+    background-position: right center;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.svarog-notifications .button-secondary:focus {
+    outline: none;
+}
+
+.svarog-notifications .button:hover {
+    background-color: rgb(126, 133, 57);
+}
+
+.svarog-notifications .button:focus {
+    outline: none;
+}
+
+.svarog-notifications .searchGridHolder {
+    border: 1px solid #eff1f1;
+    padding: 1vh;
+    margin-top: 2vh;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.534);
+    box-shadow: 2px 2px 6px #aaaaaa;
+    width: 96%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+.svarog-notifications .dropdownItemStyle:hover {
+    color: #16181b;
+    text-decoration: none;
+    background-color: #68b1a9b3;
+    border-left: 5px solid #0a6259;
+}
+
+.svarog-notifications .container {
+    height: 94vh;
+    width: 100% !important;
+    max-width: none;
+    display: flex;
+    padding-left: 0 !important;
+    padding: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+}
+
+.svarog-notifications .msg-nav-menu {
+    height: 20vh;
+}
+
+.svarog-notifications .left-container {
+    width: 20%;
+    overflow: hidden;
+    background: #304040;
+    -moz-animation-name: slide-in-left;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease-in;
+    -moz-animation-duration: 0.5s;
+    -webkit-animation-name: slide-in-left;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-duration: 0.5s;
+    animation-name: slide-in-left;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.5s;
+    padding-bottom: 20px;
+    height: 100%;
+    font-size: 0.9vw;
+}
+
+.svarog-notifications .left-container-icon {
+    bottom: 0;
+    position: absolute;
+    margin-bottom: 2vh;
+    margin-left: 7vh;
+}
+
+.svarog-notifications .right-container {
+    background-color: #ffffffad;
+    width: 76%;
+    height: 93%;
+    border: 1px solid #cdcdcd;
+    margin: 1.5% 2% 3% 2%;
+    border-radius: 5px;
+    box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 38%);
+    display: inline-block;
+    overflow: auto;
+    padding-bottom: 6vh;
+    -moz-animation-name: slide-in-left;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease-in;
+    -moz-animation-duration: 0.5s;
+    -webkit-animation-name: slide-in-left;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-duration: 0.5s;
+    animation-name: slide-in-left;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.5s;
+
+}
+
+.svarog-notifications .context-menu-button {
+    background: #304040;
+    color: white;
+    border: none;
+    margin: 1vh;
+    text-align: start;
+    border-left: 3px solid #5b7065;
+    outline: 0 !important;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: auto;
+    min-height: 45px;
+    width: 96%;
+}
+
+.svarog-notifications .context-menu-button:hover {
+    border-left: 3px solid #ffffff;
+    border-radius: 4px;
+    background: #6681688e;
+}
+
+.svarog-notifications .context-menu-button:focus {
+    outline: none;
+    font-weight: bold;
+    border-bottom: 3px solid #668168;
+}
+
+.svarog-notifications .context-menu-button.active {
+    background: #668168;
+    outline: none;
+    border-radius: 4px;
+    border-left: 3px solid #8bc34a;
+
+}
+
+.svarog-notifications .create-new-msg {
+    position: relative;
+    left: 40px;
+    box-sizing: border-box;
+    appearance: none;
+    background-color: #e0ab11;
+    border: 2px solid #e0ab11;
+    border-radius: 0.6em;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+
+}
+
+.svarog-notifications .create-new-msg.active {
+    background-color: #e0ab11 !important;
+    color: white !important;
+    font-weight: 700;
+}
+
+.svarog-notifications .create-new-msg:hover {
+    background-color: #668168;
+    background-position: right center;
+    text-decoration: none;
+    border: 2px solid #668168;
+}
+
+.svarog-notifications .create-new-msg:focus {
+    outline: none;
+    font-weight: bold;
+}
+
+.svarog-notifications .context-menu-paragraph {
+    color: #e0ab11;
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-top: 2vh;
+    margin-left: 1vh;
+}
+
+.svarog-notifications .inbox-paragraph,
+.sent-paragraph,
+.archive-paragraph {
+    font-family: 'Encode Sans', sans-serif;
+    text-transform: uppercase;
+    margin-left: 1vh;
+    font-size: 30px;
+    color: #4a4a4a;
+}
+
+.svarog-notifications p.inbox-paragraph,
+p.sent-paragraph,
+p.archive-paragraph {
+    margin-bottom: 0rem !important;
+}
+
+@-webkit-keyframes slide-in-left {
+    0% {
+        -webkit-transform: translateX(-1000px);
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-left {
+    0% {
+        -webkit-transform: translateX(-1000px);
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes slide-in-right {
+    0% {
+        -webkit-transform: translateX(1000px);
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        -webkit-transform: translateX(1000px);
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.svarog-notifications .message-holder {
+    border: 1px solid #b6b6b6;
+    padding: 1vh;
+    border-radius: 5px;
+    width: 99%;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    box-shadow: 2px 3px 5px #b8b8b8;
+    background: #ffffff73;
+}
+
+.svarog-notifications .MessagesHolder-module-context-menu-button {
+    color: white;
+    font-weight: 600
+}
+
+.svarog-notifications .svarog-notifications .date-holder {
+    font-size: 15px;
+    margin-top: -5vh;
+    display: flex;
+    margin-right: 1vh;
+    flex-direction: row-reverse;
+}
+
+.svarog-notifications .svarog-notifications .message-subject-holder {
+    border: 1px solid #b6b6b6;
+    padding: 1vh;
+    border-radius: 5px;
+    width: 98%;
+    margin-left: 1%;
+    margin-bottom: 2vh;
+    box-shadow: 2px 3px 5px #b8b8b8;
+    background: #ffffff73;
+    display: flex;
+
+}
+
+.svarog-notifications .svarog-notifications .message-paragraph {
+    color: gray;
+}
+
+.svarog-notifications .svarog-notifications .priority-paragraph,
+.assigned-to {
+    margin-left: 4.8vh;
+    margin-top: -1vh;
+}
+
+.svarog-notifications .svarog-notifications .low-priority {
+    background-image: linear-gradient(to right, #115613 0%, #568758 51%, #115613 100%);
+    padding: 0.5vh;
+    width: max-content;
+    box-shadow: 2px 3px 5px rgb(167 167 167);
+    border-radius: 5px;
+    color: white;
+    float: right;
+    font-size: 13px;
+    margin-right: 0.5%;
+}
+
+.svarog-notifications .svarog-notifications .normal-priority {
+    background-image: linear-gradient(to right, #072ca5 0%, #2357ff 51%, #072ca5 100%);
+    padding: 0.5vh;
+    width: max-content;
+    box-shadow: 2px 3px 5px rgb(167, 167, 167);
+    border-radius: 5px;
+    color: white;
+    float: right;
+    font-size: 13px;
+    margin-right: 0.5%;
+}
+
+.svarog-notifications .svarog-notifications .high-priority {
+    background-image: linear-gradient(to right, #9b0000 0%, #d34e4e 51%, #9b0000 100%);
+    padding: 0.5vh;
+    width: max-content;
+    box-shadow: 2px 3px 5px rgb(167, 167, 167);
+    border-radius: 5px;
+    color: white;
+    float: right;
+    font-size: 13px;
+    margin-right: 0.5%;
+}
+
+.svarog-notifications .reply-msg {
+    background-image: linear-gradient(to right, #e6a57f 0%, #f9dfcc 51%, #e6a57f 100%);
+    color: black;
+    width: 10%;
+    border: none;
+    padding: 0.5vh;
+    border-radius: 5px;
+    transition: 0.5s;
+    background-size: 200% auto;
+    box-shadow: 2px 1px 5px #838383;
+    display: block;
+    float: right;
+    margin-right: 15px;
+    margin-top: 0.5vh;
+
+}
+
+.svarog-notifications .reply-msg:hover,
+.cancel-btn:hover,
+.btnBack:hover {
+    background-position: right center;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.svarog-notifications .reply-msg:focus,
+.cancel-btn:focus,
+.btnBack:focus {
+    outline: none;
+}
+
+.svarog-notifications .cancel-btn {
+    background-image: linear-gradient(to right, #8f8f8f 0%, #ffffff 51%, #8f8f8f 100%);
+    color: black;
+    width: 10%;
+    border: none;
+    padding: 0.5vh;
+    border-radius: 5px;
+    transition: 0.5s;
+    background-size: 200% auto;
+    box-shadow: 2px 1px 5px #838383;
+    display: block;
+    float: left;
+    margin-left: 77%;
+    margin-top: 0.5vh;
+}
+
+.svarog-notifications .reply-textarea {
+    width: 99%;
+    border: 1px solid #d1d1d1;
+    box-shadow: 2px 3px 5px #d6d6d6;
+    border-radius: 5px;
+    min-height: 150px;
+}
+
+.svarog-notifications .reply-textarea:focus {
+    outline: none;
+}
+
+.svarog-notifications .recipinets {
+    text-transform: lowercase;
+}
+
+.svarog-notifications .btnBack {
+    background-image: linear-gradient(to right, #8f8f8f 0%, #ffffff 51%, #8f8f8f 100%);
+    color: rgb(0, 0, 0);
+    width: 6%;
+    border: none;
+    padding: 0.5vh;
+    border-radius: 5px;
+    transition: 0.5s;
+    background-size: 200% auto;
+    box-shadow: 2px 1px 5px #838383;
+    display: block;
+    margin-top: 2vh;
+}
+
+.svarog-notifications .msg-title {
+    font-size: 20px;
+}
+
+.svarog-notifications .msg-title-holder {
+    border: 1px solid #959595;
+    background-color: #ececec;
+    border-radius: 5px;
+    margin-bottom: 1%;
+}
+
+.svarog-notifications .pagination {
+    display: flex;
+    list-style: none;
+    margin-top: 3vh;
+    padding: 0;
+    float: right;
+    margin-right: 1vh;
+}
+
+.svarog-notifications .pagination a {
+    cursor: default;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #7e5f4e;
+    color: #7e5f4e;
+    margin-left: 10px;
+}
+
+.svarog-notifications .pagination li:not(.disabled) a:hover {
+    background-color: #eac7b2;
+    cursor: pointer;
+    color: #7e5f4e;
+}
+
+.svarog-notifications .pagination li a {
+    font-weight: bold;
+}
+
+.svarog-notifications .pagination li.active a {
+    color: #fff;
+    background: #90796a;
+}
+
+.svarog-notifications .pagination li.disabled a {
+    pointer-events: none;
+    color: rgb(198, 197, 202);
+    border: 1px solid rgb(198, 197, 202);
+}
