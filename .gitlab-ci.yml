@@ -2,7 +2,6 @@ stages:
   - 1_linter
   - 2_build_and_install
   - 3_mvn_install
-  - 4_sonarqube
 
 before_script:
   - pwd
