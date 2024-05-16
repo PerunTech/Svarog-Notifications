@@ -82,7 +82,7 @@ class SearchComponent extends React.Component {
             configTableName={gridConfig}
             dataTableName={res.data}
             // onRowClickFunct={this.onAssetRowClick} 
-            minHeight={600}
+            minHeight={550}
             floatDownloadBtnsToRight
             customClassName={'customGridClass'}
           />

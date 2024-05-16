@@ -34,7 +34,7 @@ class ArchiveComponent extends React.Component {
       id={gridId}
       configTableName={'/SvarogNotificationsServices/getTableFieldList/%session/' + tableName}
       dataTableName={'/SvarogNotificationsServices/getArchivedSubjects/%session'}
-      minHeight={760}
+      minHeight={600}
       onRowClickFunct={this.onArchiveRowClick}
       customClassName={'customGridClass'}
     />
