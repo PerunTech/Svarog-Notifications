@@ -31,7 +31,7 @@ class SentMessages extends React.Component {
       })
       .catch((error) => {
         console.error(error);
-        alertUser(true, 'error', error.response?.data?.title || '', error.response?.data?.message || '');
+        alertUser(true, 'error', error.response?.data?.title || error, error.response?.data?.message || '');
       })
   }
 
@@ -48,7 +48,7 @@ class SentMessages extends React.Component {
       })
       .catch((error) => {
         console.error(error);
-        alertUser(true, 'error', error.response?.data?.title || '', error.response?.data?.message || '');
+        alertUser(true, 'error', error.response?.data?.title || error, error.response?.data?.message || '');
       })
   }
   iterateRecipientInfo = (recipientData) => {
@@ -199,7 +199,7 @@ class SentMessages extends React.Component {
     })
       .catch((error) => {
         console.error(error);
-        alertUser(true, 'error', error.response?.data?.title || '', error.response?.data?.message || '');
+        alertUser(true, 'error', error.response?.data?.title || error, error.response?.data?.message || '');
       })
   }
 

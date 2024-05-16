@@ -748,7 +748,7 @@ button.btn.btn-default.array-item-move-up {
     box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 38%);
     display: inline-block;
     overflow: auto;
-    /* padding-bottom: 3.5vh; */
+    padding-bottom: 6vh;
     -moz-animation-name: slide-in-left;
     -moz-animation-iteration-count: 1;
     -moz-animation-timing-function: ease-in;
@@ -1021,7 +1021,9 @@ p.archive-paragraph {
     float: right;
     margin-right: 15px;
     margin-top: 0.5vh;
+
 }
+
 
 .reply-msg:hover,
 .cancel-btn:hover,
