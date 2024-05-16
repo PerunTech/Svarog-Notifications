@@ -36,7 +36,7 @@ class SearchComponent extends React.Component {
         this.setState({ categories })
       }
     }).catch((error) => {
-      console.error('error');
+      console.error(error);
       alertUser(true, 'error', error.response?.data?.title || '', error.response?.data?.message || '');
     })
   }
@@ -55,7 +55,7 @@ class SearchComponent extends React.Component {
         this.setState({ priorities })
       }
     }).catch((error) => {
-      console.error('error');
+      console.error(error);
       alertUser(true, 'error', error.response?.data?.title || '', error.response?.data?.message || '');
     })
   }
@@ -90,7 +90,7 @@ class SearchComponent extends React.Component {
         }
       }
     }).catch((error) => {
-      console.error('error');
+      console.error(error);
       alertUser(true, 'error', error.response?.data?.title || '', error.response?.data?.message || '');
     })
   }

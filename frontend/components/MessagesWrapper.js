@@ -106,7 +106,7 @@ class MessagesWrapper extends React.Component {
       }
     })
       .catch((error) => {
-        console.error('error');
+        console.error(error);
         alertUser(true, 'error', error.response?.data?.title || '', error.response?.data?.message || '');
       })
   }
