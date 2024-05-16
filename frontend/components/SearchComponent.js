@@ -69,7 +69,7 @@ class SearchComponent extends React.Component {
     const reqConfig = { method: 'post', data, url, headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
 
     if (title === '' && text === '' && category === '' && priority === '') {
-      this.setState({ alert: alertUser(true, 'error', 'Please enter at least one search value', null) })
+      alertUser(true, 'error', 'Please enter at least one search value', null)
     } else {
       axios(reqConfig).then(res => {
         if (res && res.data) {
