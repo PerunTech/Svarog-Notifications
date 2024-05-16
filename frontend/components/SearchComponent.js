@@ -67,10 +67,11 @@ class SearchComponent extends React.Component {
     const data = jsonToURI(dataObj)
     const url = `${window.server}/SvarogNotificationsServices/searchSubjects/${svSession}`
     const reqConfig = { method: 'post', data, url, headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
-    axios(reqConfig).then(res => {
-      if (title === '' && text === '' && category === '' && priority === '') {
-        this.setState({ alert: alertUser(true, 'error', 'Please enter at least one search value', null) })
-      } else {
+
+    if (title === '' && text === '' && category === '' && priority === '') {
+      alertUser(true, 'error', 'Please enter at least one search value', null)
+    } else {
+      axios(reqConfig).then(res => {
         if (res && res.data) {
           const gridId = `${tableName}_SEARCH_GRID`
           const gridConfig = `/SvarogNotificationsServices/getTableFieldList/${svSession}/${tableName}`
@@ -88,13 +89,13 @@ class SearchComponent extends React.Component {
           ComponentManager.cleanComponentReducerState(gridId)
           this.setState({ grid: undefined }, () => this.setState({ grid }))
         }
-      }
-    }).catch((error) => {
-      console.error(error);
-      alertUser(true, 'error', error.response?.data?.title || '', error.response?.data?.message || '');
-    })
-  }
 
+      }).catch((error) => {
+        console.error(error);
+        alertUser(true, 'error', error.response?.data?.title || '', error.response?.data?.message || '');
+      })
+    }
+  }
 
   generateSearchForm = () => {
     const { title, text, category, priority, categories, priorities } = this.state

@@ -1,4 +1,5 @@
-import { React, connect, PropTypes, GenericGrid, createHashHistory, axios, ComponentManager } from 'perun-core'
+import { React, connect, PropTypes, GenericGrid, createHashHistory, axios, ComponentManager, elements } from 'perun-core'
+const { alertUser } = elements
 import InboxMessages from './InboxMessages';
 import ReactPaginate from 'react-paginate';
 const hashHistory = createHashHistory()
