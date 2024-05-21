@@ -80,22 +80,20 @@ class InboxMessages extends React.Component {
       if (recipientInfo[i] && recipientInfo[i].MSG_CC && recipientInfo[i].MSG_CC.items && Array.isArray(recipientInfo[i].MSG_CC.items) && recipientInfo[i].MSG_CC.items.length > 0) {
         for (let k = 0; k < recipientInfo[i].MSG_CC.items.length; k++) {
           ccRecipients.push(recipientInfo[i].MSG_CC.items[k].USER_NAME)
-          ccRecipientsObjIds.push(recipientInfo[i].MSG_CC.items[i].object_id)
+          ccRecipientsObjIds.push(recipientInfo[i].MSG_CC.items[k].object_id)
         }
         this.setState({ ccRecipients, ccRecipientsObjIds })
       }
 
       if (recipientInfo[i] && recipientInfo[i].MSG_BCC && recipientInfo[i].MSG_BCC.items && Array.isArray(recipientInfo[i].MSG_BCC.items) && recipientInfo[i].MSG_BCC.items.length > 0) {
-        for (let m = 0; m < recipientInfo[i].MSG_CC.items.length; m++) {
+        for (let m = 0; m < recipientInfo[i].MSG_BCC.items.length; m++) {
           bccRecipients.push(recipientInfo[i].MSG_BCC.items[m].USER_NAME)
-          bccRecipientsObjIds.push(recipientInfo[i].MSG_BCC.items[i].object_id)
+          bccRecipientsObjIds.push(recipientInfo[i].MSG_BCC.items[m].object_id)
         }
         this.setState({ bccRecipients, bccRecipientsObjIds })
       }
     }
   }
-
-
   generateHtmlInboxSubject = (subjectData) => {
     const { objId } = this.props
     let htmlSubjectElement
@@ -123,18 +121,13 @@ class InboxMessages extends React.Component {
         const messageText = subjectData[i]["MESSAGE.TEXT"]
         const date = subjectData[i]["MESSAGE.DT_INSERT"]
         htmlSubjectElement = <div className={'message-holder'}>
-          <div className='msg-title-holder'>
-            <p type='text' className={'msg-title'}>{iconManager.getIcon('messageIcon')}<strong style={{ marginLeft: '0.5%' }}>{this.state.title}</strong></p>
-          </div>
           <div className={'message-data'}>
-            <p type='text' className={'create-holder'}><b>{iconManager.getIcon('user')}{createByName}</b></p>
+            <p type='text' className={'create-holder'}><b>{createByName}</b></p>
             <p type='text' className={'date-holder'}>
               {format(new Date(date), 'eee MMM dd kk:mm', { locale: en })}
             </p>
             <p type='text' className={`priority-paragraph ${className}`}>Priority: {labelCode}</p>
-            <p type='text' className={'assigned-to'}>To: <strong className={'recipinets'}>{recipients?.join(', ')}</strong></p>
-            <p type='text' className={'assigned-to'}>Cc: <strong className={'recipinets'}>{ccRecipients?.join(', ')}</strong></p>
-            <p type='text' className={'assigned-to'}>Bcc: <strong className={'recipinets'}>{bccRecipients?.join(', ')}</strong></p>
+
           </div>
           <div className={'message-subject-holder'}>
             <p className={'message-paragraph'}>Message: </p>
@@ -209,12 +202,25 @@ class InboxMessages extends React.Component {
   }
 
   render() {
-    const { generatedValues, titleMsg, generatedReplyValues } = this.state
+    const { generatedValues, titleMsg, generatedReplyValues, title, recipients, ccRecipients, bccRecipients } = this.state
     return (
       <React.Fragment>
         {titleMsg}
         <div className='context-menu-holder'>
-          <p className='inbox-paragraph'>Inbox Message</p>
+          <p className='inbox-paragraph'>{title}</p>
+          <div className='recipients' >
+            <p type='text' className={'assigned-to'}>To: <strong className={'recipinets'}>{recipients?.join(', ')}</strong></p>
+            {ccRecipients && ccRecipients.length > 0 && (
+              <p type='text' className={'assigned-to'}>
+                Cc: <strong className={'recipinets'}>{ccRecipients.join(', ')}</strong>
+              </p>
+            )}
+            {bccRecipients && bccRecipients.length > 0 && (
+              <p type='text' className={'assigned-to'}>
+                Bcc: <strong className={'recipinets'}>{bccRecipients.join(', ')}</strong>
+              </p>
+            )}
+          </div>
           <button className='btnBack' onClick={() => this.props.handleBack()}>{iconManager.getIcon('back')}Back</button>
           {generatedValues}
           {generatedReplyValues}
