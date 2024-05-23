@@ -1,6 +1,6 @@
 import { React, connect, PropTypes, ExportableGrid, createHashHistory, axios, ComponentManager, elements } from 'perun-core'
 const { alertUser } = elements
-import InboxMessages from './InboxMessages';
+import MessagesComponent from './MessagesComponent';
 import ReactPaginate from 'react-paginate';
 const hashHistory = createHashHistory()
 
@@ -99,7 +99,7 @@ class InboxComponent extends React.Component {
     const { generateGridElement, objIdState, objectTypeState, showGrid, pageCount } = this.state
     return (
       <React.Fragment>
-        {objIdState && objectTypeState && <InboxMessages handleBack={this.handleBack} objId={objIdState} objType={objectTypeState} />}
+        {objIdState && objectTypeState && <MessagesComponent handleBack={this.handleBack} objId={objIdState} objType={objectTypeState} />}
         <div>
           {showGrid && generateGridElement}
         </div>

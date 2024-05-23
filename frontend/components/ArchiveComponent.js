@@ -1,5 +1,5 @@
 import { React, connect, PropTypes, ExportableGrid, ComponentManager } from 'perun-core'
-import ArchiveMessages from './ArchiveMessages';
+import MessagesComponent from './MessagesComponent';
 const tableName = 'SUBJECT'
 
 class ArchiveComponent extends React.Component {
@@ -10,6 +10,7 @@ class ArchiveComponent extends React.Component {
       objectTypeState: '',
       showGrid: false,
       gridId: `${tableName}_ARCHIVED_GRID`,
+      type: 'Archive'
     };
 
   }
@@ -58,10 +59,10 @@ class ArchiveComponent extends React.Component {
   }
 
   render() {
-    const { generateGridElement, objIdState, objectTypeState, showGrid } = this.state
+    const { generateGridElement, objIdState, objectTypeState, showGrid, type } = this.state
     return (
       <React.Fragment>
-        {objIdState && objectTypeState && <ArchiveMessages handleBack={this.handleBack} objId={objIdState} objType={objectTypeState} />}
+        {objIdState && objectTypeState && <MessagesComponent handleBack={this.handleBack} objId={objIdState} objType={objectTypeState} type={type} />}
         {showGrid && generateGridElement}
       </React.Fragment>
     )

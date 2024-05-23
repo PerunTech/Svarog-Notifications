@@ -1,24 +1,22 @@
-import { React, connect, PropTypes, axios, elements } from 'perun-core'
+import { React, connect, PropTypes, axios, createHashHistory, elements } from 'perun-core'
 const { alertUser } = elements
-//import { iconManager } from './svgHolder';
+import { iconManager } from './svgHolder';
 import format from 'date-fns/format'
 import en from 'date-fns/locale/en-US'
 import { jsonToURI } from '../utils/utils';
 
-
 const tableName = 'MESSAGE'
 
-class ArchiveMessages extends React.Component {
+class MessagesComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
 
     };
-
   }
 
   componentDidMount() {
-    this.getArchivedSubjectRecipientInfo()
+    this.getInboxSubjectRecipientInfo()
   }
 
   getMessageSubject = () => {
@@ -27,7 +25,8 @@ class ArchiveMessages extends React.Component {
     axios.get(url)
       .then((response) => {
         if (response.data) {
-          this.generateHtmlArchiveSubject(response.data)
+          this.generateHtmlInboxSubject(response.data)
+
         }
       })
       .catch((error) => {
@@ -36,9 +35,20 @@ class ArchiveMessages extends React.Component {
       })
   }
 
-  getArchivedSubjectRecipientInfo = () => {
+
+  getInboxSubjectRecipientInfo = () => {
     const { svSession } = this.props
-    const url = window.server + `/SvarogNotificationsServices/getSentOrArchivedSubjectRecipientInfo/${svSession}/CLOSED`
+    let url
+    if (this.props.type === 'Sent') {
+      console.log('DA');
+      url = window.server + `/SvarogNotificationsServices/getSentOrArchivedSubjectRecipientInfo/${svSession}/VALID`
+    }
+    else if (this.props.type === 'Archive') {
+      url = window.server + `/SvarogNotificationsServices/getSentOrArchivedSubjectRecipientInfo/${svSession}/CLOSED`
+    }
+    else {
+      url = window.server + `/SvarogNotificationsServices/getInboxSubjectRecipientInfo/${svSession}`
+    }
     axios.get(url)
       .then((response) => {
         if (response.data) {
@@ -55,6 +65,7 @@ class ArchiveMessages extends React.Component {
   iterateRecipientInfo = (recipientData) => {
     const { objId } = this.props
     const recipientInfo = recipientData.filter(recipient => recipient.SUBJECT.object_id === objId)
+    this.setState({ recipientState: recipientInfo })
     let recipients = []
     let recipientsObjIds = []
     let ccRecipients = []
@@ -75,64 +86,55 @@ class ArchiveMessages extends React.Component {
         }
         this.setState({ recipients, recipientsObjIds })
       }
-
       if (recipientInfo[i] && recipientInfo[i].MSG_CC && recipientInfo[i].MSG_CC.items && Array.isArray(recipientInfo[i].MSG_CC.items) && recipientInfo[i].MSG_CC.items.length > 0) {
         for (let k = 0; k < recipientInfo[i].MSG_CC.items.length; k++) {
           ccRecipients.push(recipientInfo[i].MSG_CC.items[k].USER_NAME)
-          ccRecipientsObjIds.push(recipientInfo[i].MSG_CC.items[i].object_id)
+          ccRecipientsObjIds.push(recipientInfo[i].MSG_CC.items[k].object_id)
         }
         this.setState({ ccRecipients, ccRecipientsObjIds })
       }
-
       if (recipientInfo[i] && recipientInfo[i].MSG_BCC && recipientInfo[i].MSG_BCC.items && Array.isArray(recipientInfo[i].MSG_BCC.items) && recipientInfo[i].MSG_BCC.items.length > 0) {
-        for (let m = 0; m < recipientInfo[i].MSG_CC.items.length; m++) {
+        for (let m = 0; m < recipientInfo[i].MSG_BCC.items.length; m++) {
           bccRecipients.push(recipientInfo[i].MSG_BCC.items[m].USER_NAME)
-          bccRecipientsObjIds.push(recipientInfo[i].MSG_BCC.items[i].object_id)
+          bccRecipientsObjIds.push(recipientInfo[i].MSG_BCC.items[m].object_id)
         }
         this.setState({ bccRecipients, bccRecipientsObjIds })
       }
     }
   }
-
-  generateHtmlArchiveSubject = (subjectData) => {
+  generateHtmlInboxSubject = (subjectData) => {
+    const { objId } = this.props
     let htmlSubjectElement
     let elementArr = []
     let className
     let labelCode
-    let recipients = this.state.recipients
-    let ccRecipients = this.state.ccRecipients
-    let bccRecipients = this.state.bccRecipients
     if (subjectData) {
       for (let i = 0; i < subjectData.length; i++) {
         if (subjectData[i]["MESSAGE.PRIORITY"] === '1') {
           className = 'low-priority'
           labelCode = 'Low'
+          this.setState({ className, labelCode });
         }
         if (subjectData[i]["MESSAGE.PRIORITY"] === '2') {
           className = 'normal-priority'
           labelCode = 'Normal'
+          this.setState({ className, labelCode });
         }
         if (subjectData[i]["MESSAGE.PRIORITY"] === '3') {
           className = 'high-priority'
           labelCode = 'High'
+          this.setState({ className, labelCode });
         }
         const createByName = subjectData[i]["MESSAGE.CREATED_BY_USERNAME"]
         const messageText = subjectData[i]["MESSAGE.TEXT"]
         const date = subjectData[i]["MESSAGE.DT_INSERT"]
-        const priority = subjectData[i]["MESSAGE.PRIORITY"]
         htmlSubjectElement = <div className={'message-holder'}>
-          <div className='msg-title-holder'>
-            <p type='text' className={'msg-title'}>{iconManager.getIcon('messageIcon')}<strong style={{ marginLeft: '0.5%' }}>{this.state.title}</strong></p>
-          </div>
           <div className={'message-data'}>
-            <p type='text' className={'create-holder'}><b>{iconManager.getIcon('user')}{createByName}</b></p>
+            <p type='text' className={'create-holder'}><b>{createByName}</b></p>
             <p type='text' className={'date-holder'}>
               {format(new Date(date), 'eee MMM dd kk:mm', { locale: en })}
             </p>
-            <p type='text' className={`priority-paragraph ${className}`}>Priority: {labelCode}</p>
-            <p type='text' className={'assigned-to'}>To: <strong className={'recipinets'}>{recipients?.join(', ')}</strong></p>
-            <p type='text' className={'assigned-to'}>Cc: <strong className={'recipinets'}>{ccRecipients?.join(', ')}</strong></p>
-            <p type='text' className={'assigned-to'}>Bcc: <strong className={'recipinets'}>{bccRecipients?.join(', ')}</strong></p>
+
           </div>
           <div className={'message-subject-holder'}>
             <p className={'message-paragraph'}>Message: </p>
@@ -146,31 +148,22 @@ class ArchiveMessages extends React.Component {
     }
   }
 
-
-  replyFunc = () => {
-    const { messageText } = this.state
+  replyFunc = (e) => {
     let htmlrReplyText
     let replayElementArr = []
     htmlrReplyText = <div className='reply-msg-holder'>
-      <textarea name="messageText" id="messageText" onChange={this.onChange} value={messageText} className="reply-textarea" placeholder="Type your message here"></textarea>
+      <textarea name="messageText" id="messageText" onChange={this.onChange} className="reply-textarea" placeholder="Type your message here"></textarea>
       <button onClick={() => this.closeMessage()} className='cancel-btn'>Cancel</button>
     </div>
-
     replayElementArr.push(htmlrReplyText)
 
     this.setState({ generatedReplyValues: replayElementArr })
+
   }
 
-
-  closeMessage = () => {
-    this.setState({ generatedReplyValues: false })
-  }
-
-
-  onChange = e => {
+  onChange = (e) => {
     this.setState({ [e.target.name]: e.target.value })
   }
-
 
   sentReply = (e) => {
     const { subjectObjIdState, messageText, recipientsObjIds, ccRecipientsObjIds, bccRecipientsObjIds, category, priority, moduleName, title } = this.state
@@ -196,8 +189,8 @@ class ArchiveMessages extends React.Component {
       if (response && response.data) {
         if (response.data) {
           alertUser(true, response.data.type.toLowerCase(), response.data.title, response.data.message, null)
-          if (response.data.type, 'success') {
-            this.setState({ ['messageText']: '', generatedReplyValues: '' }, () => this.getMessageSubject())
+          if (response.data.type.toLowerCase() === 'success') {
+            this.setState({ messageText: '', generatedReplyValues: '' }, () => this.getMessageSubject())
           }
         }
       }
@@ -206,16 +199,37 @@ class ArchiveMessages extends React.Component {
         console.error(error);
         alertUser(true, 'error', error.response?.data?.title || error, error.response?.data?.message || '');
       })
+
   }
 
 
+  closeMessage = () => {
+    this.setState({ messageText: "" })
+    this.setState({ generatedReplyValues: false })
+  }
+
   render() {
-    const { generatedValues, titleMsg, generatedReplyValues } = this.state
+    const { generatedValues, titleMsg, generatedReplyValues, title, recipients, ccRecipients, bccRecipients, labelCode, className } = this.state
     return (
       <React.Fragment>
+
         {titleMsg}
         <div className='context-menu-holder'>
-          <p className='archive-paragraph'>Archive Message</p>
+          <p className='inbox-paragraph'>{title}</p>
+          <p type='text' className={`priority-paragraph ${className}`}>Priority: {labelCode}</p>
+          <div className='recipients' >
+            <p type='text' className={'assigned-to'}>To: <strong className={'recipinets'}>{recipients?.join(', ')}</strong></p>
+            {ccRecipients && ccRecipients.length > 0 && (
+              <p type='text' className={'assigned-to'}>
+                Cc: <strong className={'recipinets'}>{ccRecipients.join(', ')}</strong>
+              </p>
+            )}
+            {bccRecipients && bccRecipients.length > 0 && (
+              <p type='text' className={'assigned-to'}>
+                Bcc: <strong className={'recipinets'}>{bccRecipients.join(', ')}</strong>
+              </p>
+            )}
+          </div>
           <button className='btnBack' onClick={() => this.props.handleBack()}>{iconManager.getIcon('back')}Back</button>
           {generatedValues}
           {generatedReplyValues}
@@ -230,8 +244,8 @@ const mapStateToProps = state => ({
   svSession: state.security.svSession
 })
 
-ArchiveMessages.contextTypes = {
+MessagesComponent.contextTypes = {
   intl: PropTypes.object.isRequired
 }
 
-export default connect(mapStateToProps)(ArchiveMessages)
+export default connect(mapStateToProps)(MessagesComponent)
