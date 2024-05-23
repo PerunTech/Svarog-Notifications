@@ -1,5 +1,5 @@
 import { React, connect, PropTypes, ComponentManager, ExportableGrid } from 'perun-core'
-import SentMessages from './SentMessages';
+import MessagesComponent from './MessagesComponent';
 import { iconManager } from './svgHolder';
 const tableName = 'SUBJECT'
 
@@ -10,7 +10,8 @@ class SentComponent extends React.Component {
       objIdState: '',
       objectTypeState: '',
       showGrid: false,
-      gridId: `${tableName}_SENT_GRID`
+      gridId: `${tableName}_SENT_GRID`,
+      type: 'Sent'
     };
 
   }
@@ -61,10 +62,10 @@ class SentComponent extends React.Component {
 
 
   render() {
-    const { generateGridElement, objIdState, objectTypeState, showGrid } = this.state
+    const { generateGridElement, objIdState, objectTypeState, showGrid, type } = this.state
     return (
       <React.Fragment>
-        {objIdState && objectTypeState && <SentMessages handleBack={this.handleBack} objId={objIdState} objType={objectTypeState} />}
+        {objIdState && objectTypeState && <MessagesComponent handleBack={this.handleBack} objId={objIdState} objType={objectTypeState} type={type} />}
         {showGrid && generateGridElement}
       </React.Fragment>
     )
