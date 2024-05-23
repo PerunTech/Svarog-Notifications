@@ -13,8 +13,6 @@ class InboxMessages extends React.Component {
     this.state = {
 
     };
-    this.onChange = this.onChange.bind(this);
-
   }
 
   componentDidMount() {
@@ -141,11 +139,10 @@ class InboxMessages extends React.Component {
   }
 
   replyFunc = (e) => {
-    const { messageText } = this.state
     let htmlrReplyText
     let replayElementArr = []
     htmlrReplyText = <div className='reply-msg-holder'>
-      <textarea name="messageText" id="messageText" onChange={this.onChange} value={this.messageText} className="reply-textarea" placeholder="Type your message here"></textarea>
+      <textarea name="messageText" id="messageText" onChange={this.onChange} className="reply-textarea" placeholder="Type your message here"></textarea>
       <button onClick={() => this.closeMessage()} className='cancel-btn'>Cancel</button>
     </div>
     replayElementArr.push(htmlrReplyText)
@@ -154,16 +151,12 @@ class InboxMessages extends React.Component {
 
   }
 
-  onChange(e) {
-    const { name, value } = e.target;
-    this.setState(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
+  onChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value })
   }
 
   sentReply = (e) => {
-    const { subjectObjIdState, messageText, recipientsObjIds, ccRecipientsObjIds, bccRecipientsObjIds, category, priority, moduleName, title, generatedReplyValues } = this.state
+    const { subjectObjIdState, messageText, recipientsObjIds, ccRecipientsObjIds, bccRecipientsObjIds, category, priority, moduleName, title } = this.state
     const replyData = { SUBJECT_OBJ_ID: subjectObjIdState, TEXT: messageText, CUSTOM_RECIPIENTS: '', CUSTOM_CC: '', CUSTOM_BCC: '', MSG_ATTACHMENT: '', PRIORITY: priority, CATEGORY: category, MODULE_NAME: moduleName, TITLE: title }
     if (Array.isArray(recipientsObjIds) && recipientsObjIds.length > 0) {
       Object.assign(replyData, { CUSTOM_RECIPIENTS: recipientsObjIds.join(',') })
@@ -187,7 +180,7 @@ class InboxMessages extends React.Component {
         if (response.data) {
           alertUser(true, response.data.type.toLowerCase(), response.data.title, response.data.message, null)
           if (response.data.type.toLowerCase() === 'success') {
-            this.setState({ messageText: '', generatedReplyValues: '', generatedValues: '' }, () => this.getMessageSubject())
+            this.setState({ messageText: '', generatedReplyValues: '' }, () => this.getMessageSubject())
           }
         }
       }
@@ -209,10 +202,11 @@ class InboxMessages extends React.Component {
     const { generatedValues, titleMsg, generatedReplyValues, title, recipients, ccRecipients, bccRecipients, labelCode, className } = this.state
     return (
       <React.Fragment>
+
         {titleMsg}
-        <p type='text' className={`priority-paragraph ${className}`}>Priority: {labelCode}</p>
         <div className='context-menu-holder'>
           <p className='inbox-paragraph'>{title}</p>
+          <p type='text' className={`priority-paragraph ${className}`}>Priority: {labelCode}</p>
           <div className='recipients' >
             <p type='text' className={'assigned-to'}>To: <strong className={'recipinets'}>{recipients?.join(', ')}</strong></p>
             {ccRecipients && ccRecipients.length > 0 && (
