@@ -105,6 +105,9 @@ class SearchComponent extends React.Component {
     if (category === '0') {
       this.setState({ category: "" })
     }
+    if (priority === '0') {
+      this.setState({ priority: "" })
+    }
     return <div id='search-form' className={'form'}>
       <div id='search-values' className={'values-container-secondary'}>
         <div id='title-search-input' className='mr-2'>
