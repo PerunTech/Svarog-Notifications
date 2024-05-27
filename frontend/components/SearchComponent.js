@@ -1,4 +1,4 @@
-import { React, connect, PropTypes, axios, elements, GenericGrid, ComponentManager, Loading } from 'perun-core'
+import { React, connect, PropTypes, axios, elements, ExportableGrid, ComponentManager, Loading } from 'perun-core'
 const { alertUser } = elements
 import { iconManager } from './svgHolder'
 import { getMainLabel } from '../utils/labels'
@@ -76,13 +76,13 @@ class SearchComponent extends React.Component {
         if (res && res.data) {
           const gridId = `${tableName}_SEARCH_GRID`
           const gridConfig = `/SvarogNotificationsServices/getTableFieldList/${svSession}/${tableName}`
-          const grid = <GenericGrid
+          const grid = <ExportableGrid
             key={gridId}
             id={gridId}
             gridType='SEARCH_GRID_DATA'
             configTableName={gridConfig}
             dataTableName={res.data}
-            // onRowClickFunct={this.onAssetRowClick} 
+            //onRowClickFunct={this.onSearchRowClick}
             minHeight={550}
             floatDownloadBtnsToRight
             customClassName={'customGridClass'}
@@ -99,8 +99,12 @@ class SearchComponent extends React.Component {
     }
   }
 
+
   generateSearchForm = () => {
     const { title, text, category, priority, categories, priorities } = this.state
+    if (category === '0') {
+      this.setState({ category: "" })
+    }
     return <div id='search-form' className={'form'}>
       <div id='search-values' className={'values-container-secondary'}>
         <div id='title-search-input' className='mr-2'>
