@@ -1,4 +1,4 @@
-import { React, connect, PropTypes, axios, elements, GenericGrid, ComponentManager } from 'perun-core'
+import { React, connect, PropTypes, axios, elements, GenericGrid, ComponentManager, Loading } from 'perun-core'
 const { alertUser } = elements
 import { iconManager } from './svgHolder'
 import { getMainLabel } from '../utils/labels'
@@ -67,11 +67,12 @@ class SearchComponent extends React.Component {
     const data = jsonToURI(dataObj)
     const url = `${window.server}/SvarogNotificationsServices/searchSubjects/${svSession}`
     const reqConfig = { method: 'post', data, url, headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
-
+    this.setState({ loading: true })
     if (title === '' && text === '' && (category === '' || category === '0') && (priority === '' || priority === '0')) {
       alertUser(true, 'error', 'Please enter at least one search value', null)
     } else {
       axios(reqConfig).then(res => {
+        this.setState({ loading: false })
         if (res && res.data) {
           const gridId = `${tableName}_SEARCH_GRID`
           const gridConfig = `/SvarogNotificationsServices/getTableFieldList/${svSession}/${tableName}`
@@ -93,6 +94,7 @@ class SearchComponent extends React.Component {
       }).catch((error) => {
         console.error(error);
         alertUser(true, 'error', error.response?.data?.title || error, error.response?.data?.message || '');
+        this.setState({ loading: false })
       })
     }
   }
@@ -162,16 +164,23 @@ class SearchComponent extends React.Component {
 
 
   render() {
-    const { grid } = this.state
+    const { grid, loading } = this.state
 
-    return <div id='container' className='height-90-percent'>
-      <div className={'searchGridHolder'}>
-        <div className='col-md-12 d-flex flex-row align-items-center mt-2 mb-2'>{this.generateSearchForm()}</div>
-      </div>
-      <div className='col-md-12 mt-n2 mb-2' style={{ marginBottom: '2vh' }}>{grid}</div>
-    </div>
+    return (
+      <>
+        {loading && <Loading />}
+        <div id='container' className='height-90-percent'>
+          <div className={'searchGridHolder'}>
+            <div className='col-md-12 d-flex flex-row align-items-center mt-2 mb-2'>{this.generateSearchForm()}</div>
+          </div>
+          <div className='col-md-12 mt-n2 mb-2' style={{ marginBottom: '2vh' }}>{grid}</div>
+        </div>
+      </>
+    )
   }
 }
+
+
 
 SearchComponent.contextTypes = {
   intl: PropTypes.object.isRequired
