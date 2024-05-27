@@ -70,6 +70,7 @@ class SearchComponent extends React.Component {
     this.setState({ loading: true })
     if (title === '' && text === '' && (category === '' || category === '0') && (priority === '' || priority === '0')) {
       alertUser(true, 'error', 'Please enter at least one search value', null)
+      this.setState({ loading: false })
     } else {
       axios(reqConfig).then(res => {
         this.setState({ loading: false })
