@@ -40,7 +40,6 @@ class MessagesComponent extends React.Component {
     const { svSession } = this.props
     let url
     if (this.props.type === 'Sent') {
-      console.log('DA');
       url = window.server + `/SvarogNotificationsServices/getSentOrArchivedSubjectRecipientInfo/${svSession}/VALID`
     }
     else if (this.props.type === 'Archive') {
@@ -180,26 +179,29 @@ class MessagesComponent extends React.Component {
     const data = jsonToURI(replyData)
     let { svSession } = this.props
     let postUrl = window.server + '/SvarogNotificationsServices/createNewMessage/' + svSession
-    axios({
-      method: 'post',
-      data: data,
-      url: postUrl,
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-    }).then((response) => {
-      if (response && response.data) {
-        if (response.data) {
-          alertUser(true, response.data.type.toLowerCase(), response.data.title, response.data.message, null)
-          if (response.data.type.toLowerCase() === 'success') {
-            this.setState({ messageText: '', generatedReplyValues: '' }, () => this.getMessageSubject())
+    if (messageText == undefined || messageText === '') {
+      alertUser(true, 'error', 'Enter a message')
+    }
+    else {
+      axios({
+        method: 'post',
+        data: data,
+        url: postUrl,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+      }).then((response) => {
+        if (response && response.data) {
+          if (response.data) {
+            if (response.data.type.toLowerCase() === 'success') {
+              this.setState({ messageText: '', generatedReplyValues: '' }, () => this.getMessageSubject())
+            }
           }
         }
-      }
-    })
-      .catch((error) => {
-        console.error(error);
-        alertUser(true, 'error', error.response?.data?.title || error, error.response?.data?.message || '');
       })
-
+        .catch((error) => {
+          console.error(error);
+          alertUser(true, 'error', error.response?.data?.title || error, error.response?.data?.message || '');
+        })
+    }
   }
 
 
