@@ -4,7 +4,7 @@ import { iconManager } from './svgHolder';
 import format from 'date-fns/format'
 import en from 'date-fns/locale/en-US'
 import { jsonToURI } from '../utils/utils';
-
+import { getMainLabel } from '../utils/labels'
 const tableName = 'MESSAGE'
 
 class MessagesComponent extends React.Component {
@@ -180,7 +180,8 @@ class MessagesComponent extends React.Component {
     let { svSession } = this.props
     let postUrl = window.server + '/SvarogNotificationsServices/createNewMessage/' + svSession
     if (messageText == undefined || messageText === '') {
-      alertUser(true, 'error', 'Enter a message')
+      alertUser(true, 'error', getMainLabel('error.emptyMessage', this.context))
+
     }
     else {
       axios({
