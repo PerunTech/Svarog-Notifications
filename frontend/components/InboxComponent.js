@@ -24,7 +24,7 @@ class InboxComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.getTotalNumberPages();
+    // this.getTotalNumberPages();
     this.showInboxGrid(0, 10);
   }
 
