@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.peruntech</groupId>
 	<artifactId>svarog-notifications</artifactId>
-	<version>4.0.0</version>
+	<version>4.0.1</version>
 	<packaging>bundle</packaging>
 	<name>svarog-notifications</name>
 	<description>Svarog Notifications bundle for the Svarog Business Platform</description>
