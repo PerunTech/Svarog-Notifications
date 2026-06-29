@@ -32,7 +32,7 @@ after_script:
     - mvn clean
     - mvn test
 
-1_svarog-nofitications-dev-install:
+1_svarog-nofitications-install:
   stage: 3_mvn_install
   script:
     - pwd
@@ -48,20 +48,4 @@ after_script:
     - mvn clean compile deploy -DskipTests
   only:
     - dev
-
-2_svarog-nofitications-stable-install:
-  stage: 3_mvn_install
-  script:
-    - pwd
-    - cd $CI_PROJECT_DIR/
-    - git reset --hard HEAD
-    - rm -rf node_modules
-    - pnpm install
-    - rm -rf backend/www/*.js
-    - pnpm run build
-    - cd backend
-    - ls -al www/
-    - pwd
-    - mvn clean compile deploy -DskipTests
-  only:
-    - master
+    - main
