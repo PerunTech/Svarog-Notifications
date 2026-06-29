@@ -56,7 +56,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<build>
-		<sourceDirectory>src</sourceDirectory>
+		<sourceDirectory>src/main/java</sourceDirectory>
 		<resources>
 			<resource>
 				<directory>${project.basedir}</directory>
@@ -217,15 +217,7 @@
 						<artifactId>maven-javadoc-plugin</artifactId>
 						<version>3.4.1</version>
 						<configuration>
-							<reportPlugins>
-								<plugin>
-									<groupId>org.apache.maven.plugins</groupId>
-									<artifactId>maven-javadoc-plugin</artifactId>
-									<configuration>
-										<doclint>none</doclint>
-									</configuration>
-								</plugin>
-							</reportPlugins>
+							<doclint>none</doclint>
 						</configuration>
 						<executions>
 							<execution>
