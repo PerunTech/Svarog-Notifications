@@ -195,7 +195,7 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>svarog</groupId>
+			<groupId>org.peruntech</groupId>
 			<artifactId>svarog</artifactId>
 			<version>[4.0.0-SNAPSHOT,5.0.0)</version>
 			<scope>provided</scope>
