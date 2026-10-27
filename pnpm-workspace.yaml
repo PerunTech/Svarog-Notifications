@@ -1,0 +1,6 @@
+# pnpm 9 refuses this file without a packages list; there are no sub-packages.
+packages: []
+
+overrides:
+  # monaco-editor 0.57.0, still its latest, pins dompurify 3.4.15 exactly.
+  monaco-editor>dompurify: ^3.4.17
