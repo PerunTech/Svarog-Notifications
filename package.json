@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "date-fns": "^3.6.0",
-    "perun-core": "git+https://git@gitlab.prtech.mk/svarog4/perun-core#dev",
+    "perun-core": "git+https://git@gitlab.prtech.mk/svarog4/perun-core#semver:^4.5.8-rc.2",
     "react-paginate": "^8.2.0"
   },
   "devDependencies": {
