@@ -1,6 +1,5 @@
 import { React, connect, ComponentManager, ExportableGrid } from 'perun-core'
 import MessagesComponent from './MessagesComponent';
-import { iconManager } from './svgHolder';
 const tableName = 'SUBJECT'
 
 class SentComponent extends React.Component {

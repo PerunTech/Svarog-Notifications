@@ -1,4 +1,4 @@
-import { ComponentManager, redux } from 'perun-core'
+import { ComponentManager } from 'perun-core'
 
 export function flattenObject (obj) {
   const flattened = {}
@@ -26,6 +26,6 @@ export function jsonToURI (json) {
   return arr.join('&')
 }
 
-export function resetFormSave(tableName) { debugger
+export function resetFormSave(tableName) {
   ComponentManager.setStateForComponent(`${tableName}_FORM`, null)
 }

@@ -1,8 +1,7 @@
-import { React, connect, ExportableGrid, createHashHistory, axios, ComponentManager, elements } from 'perun-core'
+import { React, connect, ExportableGrid, axios, ComponentManager, elements } from 'perun-core'
 const { alertUser } = elements
 import MessagesComponent from './MessagesComponent';
 import ReactPaginate from 'react-paginate';
-const hashHistory = createHashHistory()
 
 const tableName = 'SUBJECT'
 
@@ -85,7 +84,6 @@ class InboxComponent extends React.Component {
   }
 
   handlePageClick = (e) => {
-    debugger
     const { perPage, totalNumber } = this.state
     const page = e.selected;
     const start = (page * perPage) % totalNumber;
