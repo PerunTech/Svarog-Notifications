@@ -21,8 +21,17 @@ after_script:
   script:
     - pwd
     - git reset --hard HEAD
+    # vite's and oxlint's native bindings are optional dependencies, which pnpm skips without a word on an older node.
+    - |
+      floor=$(node -p "require('./package.json').engines.node.replace(/[^0-9.]/g,'')")
+      have=$(node -p "process.versions.node")
+      if [ "$(printf '%s\n%s\n' "$floor" "$have" | sort -V | head -1)" != "$floor" ]; then
+        echo "This runner has node $have; this package needs $floor or newer."
+        exit 1
+      fi
     - rm -rf node_modules
     - pnpm install
+    - pnpm run lint
     - pnpm run build
 
 1_build_test_java:

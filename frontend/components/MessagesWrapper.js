@@ -1,4 +1,4 @@
-import { React, connect, PropTypes, GenericForm, elements, axios } from 'perun-core'
+import { React, connect, IntlContext, GenericForm, elements, axios } from 'perun-core'
 const { alertUser } = elements
 import contextMenu from '../../backend/configuration/ContextMenu.json'
 import { iconManager } from './svgHolder';
@@ -26,7 +26,7 @@ class MessagesWrapper extends React.Component {
   componentDidMount() {
     const idScreen = document.getElementById('identificationScreen')
     if (idScreen) {
-      idScreen.innerText = this.context.intl.formatMessage({
+      idScreen.innerText = this.context.formatMessage({
         id: 'perun.plugin.svarog-notifications', defaultMessage: 'perun.plugin.svarog-notifications'
       })
     }
@@ -175,8 +175,6 @@ const mapStateToProps = state => ({
   svSession: state.security.svSession
 })
 
-MessagesWrapper.contextTypes = {
-  intl: PropTypes.object.isRequired
-}
+MessagesWrapper.contextType = IntlContext
 
 export default connect(mapStateToProps)(MessagesWrapper)

@@ -1,4 +1,4 @@
-import { React, connect, PropTypes, ExportableGrid, ComponentManager } from 'perun-core'
+import { React, connect, ExportableGrid, ComponentManager } from 'perun-core'
 import MessagesComponent from './MessagesComponent';
 const tableName = 'SUBJECT'
 
@@ -72,9 +72,5 @@ class ArchiveComponent extends React.Component {
 const mapStateToProps = state => ({
   svSession: state.security.svSession
 })
-
-ArchiveComponent.contextTypes = {
-  intl: PropTypes.object.isRequired
-}
 
 export default connect(mapStateToProps)(ArchiveComponent)

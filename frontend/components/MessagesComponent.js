@@ -1,4 +1,4 @@
-import { React, connect, PropTypes, axios, createHashHistory, elements } from 'perun-core'
+import { React, connect, IntlContext, axios, elements } from 'perun-core'
 const { alertUser } = elements
 import { iconManager } from './svgHolder';
 import format from 'date-fns/format'
@@ -102,7 +102,6 @@ class MessagesComponent extends React.Component {
     }
   }
   generateHtmlInboxSubject = (subjectData) => {
-    const { objId } = this.props
     let htmlSubjectElement
     let elementArr = []
     let className
@@ -147,7 +146,7 @@ class MessagesComponent extends React.Component {
     }
   }
 
-  replyFunc = (e) => {
+  replyFunc = () => {
     let htmlrReplyText
     let replayElementArr = []
     htmlrReplyText = <div className='reply-msg-holder'>
@@ -164,7 +163,7 @@ class MessagesComponent extends React.Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  sentReply = (e) => {
+  sentReply = () => {
     const { subjectObjIdState, messageText, recipientsObjIds, ccRecipientsObjIds, bccRecipientsObjIds, category, priority, moduleName, title } = this.state
     const replyData = { SUBJECT_OBJ_ID: subjectObjIdState, TEXT: messageText, CUSTOM_RECIPIENTS: '', CUSTOM_CC: '', CUSTOM_BCC: '', MSG_ATTACHMENT: '', PRIORITY: priority, CATEGORY: category, MODULE_NAME: moduleName, TITLE: title }
     if (Array.isArray(recipientsObjIds) && recipientsObjIds.length > 0) {
@@ -247,8 +246,6 @@ const mapStateToProps = state => ({
   svSession: state.security.svSession
 })
 
-MessagesComponent.contextTypes = {
-  intl: PropTypes.object.isRequired
-}
+MessagesComponent.contextType = IntlContext
 
 export default connect(mapStateToProps)(MessagesComponent)
