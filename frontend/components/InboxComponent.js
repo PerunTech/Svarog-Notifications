@@ -1,4 +1,4 @@
-import { React, connect, PropTypes, ExportableGrid, createHashHistory, axios, ComponentManager, elements } from 'perun-core'
+import { React, connect, ExportableGrid, createHashHistory, axios, ComponentManager, elements } from 'perun-core'
 const { alertUser } = elements
 import MessagesComponent from './MessagesComponent';
 import ReactPaginate from 'react-paginate';
@@ -124,9 +124,5 @@ class InboxComponent extends React.Component {
 const mapStateToProps = state => ({
   svSession: state.security.svSession
 })
-
-InboxComponent.contextTypes = {
-  intl: PropTypes.object.isRequired
-}
 
 export default connect(mapStateToProps)(InboxComponent)

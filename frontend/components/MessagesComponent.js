@@ -1,4 +1,4 @@
-import { React, connect, PropTypes, axios, createHashHistory, elements } from 'perun-core'
+import { React, connect, IntlContext, axios, createHashHistory, elements } from 'perun-core'
 const { alertUser } = elements
 import { iconManager } from './svgHolder';
 import format from 'date-fns/format'
@@ -247,8 +247,6 @@ const mapStateToProps = state => ({
   svSession: state.security.svSession
 })
 
-MessagesComponent.contextTypes = {
-  intl: PropTypes.object.isRequired
-}
+MessagesComponent.contextType = IntlContext
 
 export default connect(mapStateToProps)(MessagesComponent)

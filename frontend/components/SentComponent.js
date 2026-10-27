@@ -1,4 +1,4 @@
-import { React, connect, PropTypes, ComponentManager, ExportableGrid } from 'perun-core'
+import { React, connect, ComponentManager, ExportableGrid } from 'perun-core'
 import MessagesComponent from './MessagesComponent';
 import { iconManager } from './svgHolder';
 const tableName = 'SUBJECT'
@@ -75,9 +75,5 @@ class SentComponent extends React.Component {
 const mapStateToProps = state => ({
   svSession: state.security.svSession
 })
-
-SentComponent.contextTypes = {
-  intl: PropTypes.object.isRequired
-}
 
 export default connect(mapStateToProps)(SentComponent)

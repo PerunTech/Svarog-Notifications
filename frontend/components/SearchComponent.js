@@ -1,4 +1,4 @@
-import { React, connect, PropTypes, axios, elements, ExportableGrid, ComponentManager, Loading } from 'perun-core'
+import { React, connect, IntlContext, axios, elements, ExportableGrid, ComponentManager, Loading } from 'perun-core'
 const { alertUser } = elements
 import { iconManager } from './svgHolder'
 import { getMainLabel } from '../utils/labels'
@@ -190,16 +190,10 @@ class SearchComponent extends React.Component {
 
 
 
-SearchComponent.contextTypes = {
-  intl: PropTypes.object.isRequired
-}
-
 const mapStateToProps = state => ({
   svSession: state.security.svSession
 })
 
-SearchComponent.contextTypes = {
-  intl: PropTypes.object.isRequired
-}
+SearchComponent.contextType = IntlContext
 
 export default connect(mapStateToProps)(SearchComponent)
