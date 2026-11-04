@@ -1,10 +1,10 @@
 name: Publish package to the Maven Central Repository
 on:
+  # A release's tag. The tags carry no `v`, and a candidate's tag (1.2.3-rc.1) does not match:
+  # its pom is still a -SNAPSHOT, so there is nothing to publish.
   push:
-    branches:
-      - main
-  pull_request:
-    branches: [ main ]
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -15,19 +15,22 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      # Before Node, so that setup-node finds pnpm for its cache.
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v6
         with:
-          version: latest
+          version: 11.24.0
+      # 22, for the floor in package.json's `engines` that Vite and oxlint set.
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22.x'
           cache: 'pnpm'
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
+      # What the build writes, and nothing else in the same directory.
       - name: Clean build output
-        run: rm -rf backend/www/*.js
+        run: rm -f backend/www/svarog-notifications.js
       - name: Build frontend
         run: pnpm run build
       - name: Publish to Maven Central
